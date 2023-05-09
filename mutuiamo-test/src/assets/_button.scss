@@ -1,0 +1,10 @@
+.redButton {
+    border-radius: 10px !important;
+    padding: 20px 0px !important;
+    background-color: $redDanger;
+    margin: 35px;
+  }
+  
+  .redButton:hover {
+    background-color: $lightRed !important;
+  }

@@ -1,0 +1,63 @@
+.portrait {
+  width: 100px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+}
+
+.star {
+  color: #fcba45;
+  padding: 0 10px;
+  font-size: 1.3rem;
+}
+
+.appleLogo {
+  color: white;
+  background: black;
+  border-radius: 10px;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  padding: 5px 20px;
+}
+
+.appleIcon {
+  font-size: 2.5rem;
+}
+
+.bigText {
+  font-size: 1.2rem;
+}
+
+.appleLogo2 {
+  width: 150px;
+}
+
+.GoogleLogo {
+  color: white;
+  background: black;
+  border-radius: 10px;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  padding: 5px 10px;
+}
+
+.googleIcon {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.greenStar {
+  font-size: 1.6rem;
+  color: #00b67a;
+  margin: 0 5px;
+}
+
+.trustPilotText {
+  font-size: 0.8rem;
+}
+
+.trustPilotBold {
+  font-weight: bold;
+  font-size: 1rem;
+}

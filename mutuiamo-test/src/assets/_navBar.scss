@@ -1,0 +1,38 @@
+.navBar {
+  position: relative;
+  box-shadow: 0 3px 2px -2px $shadow2;
+  background: white;
+}
+
+.phoneNum {
+  color: $shadow1;
+  line-height: 1.4rem;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 0%;
+  transform: translate(-100%, -130%);
+}
+
+@media screen and (max-width: 1000px) {
+  .phoneNum {
+    transform: translate(-50%, -130%);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .phoneNum {
+    transform: translate(-10%, -130%);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .phoneNum {
+    transform: translate(-25%, -130%);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .phoneNum {
+    display: none;
+  }
+}

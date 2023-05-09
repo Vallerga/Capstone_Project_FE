@@ -1,10 +1,8 @@
-
+// color setting
+@import "color";
 
 // font setting profile component
 @import "fontSetting";
-
-// general setting
-@import "generalSetting";
 
 // button section
 @import "button";
@@ -12,6 +10,78 @@
 // Navbar section
 @import "navBar";
 
+// AsideProfile
+@import "asideProfile";
+
 body {
-  background-color: aquamarine;
+  background: $bgGrey;
+}
+
+.mainContainer {
+  padding: 0 10%;
+}
+
+@media screen and (min-width: 1600px) {
+  .mainContainer {
+    padding: 0 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mainRow {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mainContainer {
+    padding: 0 10%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .mainContainer {
+    padding: 0 10%;
+  }
+}
+
+.section {
+  background: $bgWhite;
+  box-shadow: 0 0 2px 1px $shadow2;
+}
+
+.fixVariable {
+  background-color: $shadow2;
+  border-radius: 15px;
+  padding: 5px 5px;
+  width: 300px;
+  color: black;
+}
+
+.fix {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 5px 0px;
+  width: 140px;
+}
+
+.fix:hover {
+  background-color: $lightRed;
+  color: white;
+}
+
+.variable {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 5px 0px;
+  width: 140px;
+}
+
+.variable:hover {
+  background-color: $lightRed;
+  color: white;
+}
+
+.selectedRate {
+  background-color: $redDanger;
 }
