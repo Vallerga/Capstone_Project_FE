@@ -1,8 +1,8 @@
 const FooterCustom = () => {
     return (
         <>
-        <div div style={{background:"green"}}>
-            <img alt="Tag" src="../../public/mockup.png"/>
+        <div style={{background:"green"}}>
+            <img alt="Tag" src={require("../assets/image/Portrait.jpeg")}/>
         </div>
         </>
     )

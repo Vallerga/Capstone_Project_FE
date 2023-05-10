@@ -3,10 +3,10 @@ import RatingButton from "./RatingButton";
 
 
 const RateBar = () => {
-    const [selectedRate, setSelectedRate] = useState("Fisso");
+    const [checker, setChecker] = useState("Fisso");
 
-    const handleButtonClick = (rate) => {
-        setSelectedRate(rate);
+    const handleButtonClick = (param) => {
+        setChecker(param);
     };
   
     return (
@@ -14,13 +14,13 @@ const RateBar = () => {
             <RatingButton
                 rate={"Fisso"}
                 setting={"fix text-center "}
-                selected={selectedRate === "Fisso"}
+                selected={checker === "Fisso"}
                 onClick={() => handleButtonClick("Fisso")}
             />
             <RatingButton
                 rate={"Variabile"}
                 setting={"variable text-center "}
-                selected={selectedRate === "Variabile"}
+                selected={checker === "Variabile"}
                 onClick={() => handleButtonClick("Variabile")}
             />
         </div>

@@ -11,7 +11,6 @@ const Home = () => {
         </p>
         <RateBar />
         <Amount />
-
       </Container>
       <Container className="section rounded-4 section">
         <div>
