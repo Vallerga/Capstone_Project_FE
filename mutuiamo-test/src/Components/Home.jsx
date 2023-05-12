@@ -1,166 +1,89 @@
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import RateBar from "./section1/RateBar";
 import Amount from "./section1/Amount";
+import SustainabilityBar from "./section1/SustainabilityBar";
+import Years from "./section1/Years";
+import LoanImport from "./section1/LoanImport";
+import TotalImport from "./section1/TotalImport";
+import { useState } from "react";
+import { useSelector } from 'react-redux'
 
 const Home = () => {
+  const [loanRequest, setLoanRequest] = useState(100000);
+  const [totalImportImmobile, setTotalImportImmobile] = useState(200000);
+
+  const LoanRequest = useSelector((state) => state.LoanRequest);
+  console.log("LoanRequest is:", LoanRequest)
+
+  // METHOD SECTION 1
+  const circleButtonModifier = (whatIs, actualImport, changer, type ) => {
+    /* console.log("start circleButtonModifier") */
+    if (whatIs === "loanRequest") {
+      if (type === "+") {
+        if(loanRequest + changer > totalImportImmobile){
+          alert("Loan request cannot be greater than total import immobile");
+          return "Loan request cannot be greater than total import immobile";
+        }
+        setLoanRequest(actualImport + changer);
+      } else if (type === "-") {
+        if(loanRequest - changer < 0){
+          alert("Loan request cannot be less than 0€");
+          return "Loan request cannot be less than 0€";
+        }
+        setLoanRequest(actualImport - changer);
+      } else {
+        console.log("loanRequest function doesn't work");
+      }
+    } else if (whatIs === "totalImportImmobile") {
+      if (type === "+") {
+        setTotalImportImmobile(actualImport + changer);
+      } else if (type === "-") {
+        if(totalImportImmobile - changer < loanRequest){
+          alert("Total import immobile cannot be less than loan request");
+          return "Total import immobile cannot be less than loan request";
+        } else if (totalImportImmobile - changer < 0) {
+          alert("Total import immobile be less than 0€");
+          return "Total import immobile be less than 0€";
+        }
+        setTotalImportImmobile(actualImport - changer);
+      } else {
+        console.log("totalImportImmobile function doesn't work");
+      }
+    } else {
+      console.log("CircleButtonModificator function doesn't work");
+    }
+  };
+
   return (
-    <>
-      <Container className="sectionContainer section rounded-4 section my-4 d-flex flex-column align-items-center">
-        <p className="fs-6 mt-4">
+    // SECTION 1
+    <Container className="container-fluid p-0 sectionContainer section rounded-4 section my-4">
+      <Row className="d-flex flex-column align-items-center px-5">
+        <p className="fs-5 mt-5 text-center">
           <strong>Tipologia Tasso</strong>
         </p>
         <RateBar />
         <Amount />
-      </Container>
-      <Container className="section rounded-4 section">
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dicta
-          vero, eum maiores voluptas blanditiis architecto beatae nesciunt odio
-          quas? Quibusdam rem, ea voluptates ipsam quo nam numquam impedit
-          aspernatur magnam quae atque nostrum rerum exercitationem ipsum.
-          Inventore, repellendus illo earum ducimus nihil molestiae fuga
-          voluptatum sint provident, voluptates blanditiis. Odio quos rem non
-          tempora? Autem vel, consequuntur non adipisci dolore reprehenderit
-          laborum ipsa esse in iste impedit ipsam deleniti dolor voluptatibus id
-          aspernatur nemo quis dolores voluptatum dolorum fuga blanditiis? Optio
-          nemo magni ea veniam iure eius ipsa nihil odit, eligendi tenetur
-          labore libero ratione corporis quaerat accusamus repudiandae. Sit
-          excepturi nostrum accusamus officiis, laborum non totam cum qui quis
-          ex eveniet dolor repudiandae ut aliquam deleniti iure recusandae iste!
-          Velit repellat eveniet accusantium nulla? Placeat fugiat totam quam
-          consequatur ipsam laboriosam ex excepturi, quo nam, ipsum beatae iure
-          officiis sit cupiditate sed, ipsa corporis. Perspiciatis modi maxime
-          exercitationem. Nostrum sequi dignissimos ipsa dolor et. Delectus
-          obcaecati temporibus, magnam cumque quod sequi voluptatum rem enim
-          suscipit excepturi distinctio, ab totam adipisci eaque corrupti
-          impedit omnis laudantium atque molestias ullam ea dolores unde
-          accusamus! Accusantium sint ducimus molestiae saepe alias corporis
-          nostrum aspernatur, dolores molestias deserunt quis excepturi eveniet
-          illum! Sint praesentium numquam corporis magni fugit, quia assumenda
-          ea aperiam accusantium vero libero recusandae expedita? Minima
-          expedita architecto facilis quod nulla placeat, ullam reiciendis
-          tenetur est in earum ipsa vel, dolorum provident voluptate excepturi
-          ratione nostrum officia quasi delectus suscipit! Autem fugit, eaque
-          blanditiis dignissimos esse quibusdam unde amet aliquam! Lorem ipsum
-          dolor sit, amet consectetur adipisicing elit. Ullam fugiat sunt culpa
-          ab asperiores nesciunt dolores natus porro rerum tempora mollitia
-          sapiente et expedita, tempore soluta molestias dolorem, magni numquam,
-          iste optio impedit qui non possimus aut. Quam et distinctio voluptatum
-          velit repudiandae debitis sit. Veritatis rem eos facere tempore.
-        </div>
-      </Container>
-      <Container className="section rounded-4 section">
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dicta
-          vero, eum maiores voluptas blanditiis architecto beatae nesciunt odio
-          quas? Quibusdam rem, ea voluptates ipsam quo nam numquam impedit
-          aspernatur magnam quae atque nostrum rerum exercitationem ipsum.
-          Inventore, repellendus illo earum ducimus nihil molestiae fuga
-          voluptatum sint provident, voluptates blanditiis. Odio quos rem non
-          tempora? Autem vel, consequuntur non adipisci dolore reprehenderit
-          laborum ipsa esse in iste impedit ipsam deleniti dolor voluptatibus id
-          aspernatur nemo quis dolores voluptatum dolorum fuga blanditiis? Optio
-          nemo magni ea veniam iure eius ipsa nihil odit, eligendi tenetur
-          labore libero ratione corporis quaerat accusamus repudiandae. Sit
-          excepturi nostrum accusamus officiis, laborum non totam cum qui quis
-          ex eveniet dolor repudiandae ut aliquam deleniti iure recusandae iste!
-          Velit repellat eveniet accusantium nulla? Placeat fugiat totam quam
-          consequatur ipsam laboriosam ex excepturi, quo nam, ipsum beatae iure
-          officiis sit cupiditate sed, ipsa corporis. Perspiciatis modi maxime
-          exercitationem. Nostrum sequi dignissimos ipsa dolor et. Delectus
-          obcaecati temporibus, magnam cumque quod sequi voluptatum rem enim
-          suscipit excepturi distinctio, ab totam adipisci eaque corrupti
-          impedit omnis laudantium atque molestias ullam ea dolores unde
-          accusamus! Accusantium sint ducimus molestiae saepe alias corporis
-          nostrum aspernatur, dolores molestias deserunt quis excepturi eveniet
-          illum! Sint praesentium numquam corporis magni fugit, quia assumenda
-          ea aperiam accusantium vero libero recusandae expedita? Minima
-          expedita architecto facilis quod nulla placeat, ullam reiciendis
-          tenetur est in earum ipsa vel, dolorum provident voluptate excepturi
-          ratione nostrum officia quasi delectus suscipit! Autem fugit, eaque
-          blanditiis dignissimos esse quibusdam unde amet aliquam! Lorem ipsum
-          dolor sit, amet consectetur adipisicing elit. Ullam fugiat sunt culpa
-          ab asperiores nesciunt dolores natus porro rerum tempora mollitia
-          sapiente et expedita, tempore soluta molestias dolorem, magni numquam,
-          iste optio impedit qui non possimus aut. Quam et distinctio voluptatum
-          velit repudiandae debitis sit. Veritatis rem eos facere tempore.
-        </div>
-      </Container>
-      <Container className="section rounded-4 section">
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dicta
-          vero, eum maiores voluptas blanditiis architecto beatae nesciunt odio
-          quas? Quibusdam rem, ea voluptates ipsam quo nam numquam impedit
-          aspernatur magnam quae atque nostrum rerum exercitationem ipsum.
-          Inventore, repellendus illo earum ducimus nihil molestiae fuga
-          voluptatum sint provident, voluptates blanditiis. Odio quos rem non
-          tempora? Autem vel, consequuntur non adipisci dolore reprehenderit
-          laborum ipsa esse in iste impedit ipsam deleniti dolor voluptatibus id
-          aspernatur nemo quis dolores voluptatum dolorum fuga blanditiis? Optio
-          nemo magni ea veniam iure eius ipsa nihil odit, eligendi tenetur
-          labore libero ratione corporis quaerat accusamus repudiandae. Sit
-          excepturi nostrum accusamus officiis, laborum non totam cum qui quis
-          ex eveniet dolor repudiandae ut aliquam deleniti iure recusandae iste!
-          Velit repellat eveniet accusantium nulla? Placeat fugiat totam quam
-          consequatur ipsam laboriosam ex excepturi, quo nam, ipsum beatae iure
-          officiis sit cupiditate sed, ipsa corporis. Perspiciatis modi maxime
-          exercitationem. Nostrum sequi dignissimos ipsa dolor et. Delectus
-          obcaecati temporibus, magnam cumque quod sequi voluptatum rem enim
-          suscipit excepturi distinctio, ab totam adipisci eaque corrupti
-          impedit omnis laudantium atque molestias ullam ea dolores unde
-          accusamus! Accusantium sint ducimus molestiae saepe alias corporis
-          nostrum aspernatur, dolores molestias deserunt quis excepturi eveniet
-          illum! Sint praesentium numquam corporis magni fugit, quia assumenda
-          ea aperiam accusantium vero libero recusandae expedita? Minima
-          expedita architecto facilis quod nulla placeat, ullam reiciendis
-          tenetur est in earum ipsa vel, dolorum provident voluptate excepturi
-          ratione nostrum officia quasi delectus suscipit! Autem fugit, eaque
-          blanditiis dignissimos esse quibusdam unde amet aliquam! Lorem ipsum
-          dolor sit, amet consectetur adipisicing elit. Ullam fugiat sunt culpa
-          ab asperiores nesciunt dolores natus porro rerum tempora mollitia
-          sapiente et expedita, tempore soluta molestias dolorem, magni numquam,
-          iste optio impedit qui non possimus aut. Quam et distinctio voluptatum
-          velit repudiandae debitis sit. Veritatis rem eos facere tempore.
-        </div>
-      </Container>
-      <Container className="section rounded-4 section">
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dicta
-          vero, eum maiores voluptas blanditiis architecto beatae nesciunt odio
-          quas? Quibusdam rem, ea voluptates ipsam quo nam numquam impedit
-          aspernatur magnam quae atque nostrum rerum exercitationem ipsum.
-          Inventore, repellendus illo earum ducimus nihil molestiae fuga
-          voluptatum sint provident, voluptates blanditiis. Odio quos rem non
-          tempora? Autem vel, consequuntur non adipisci dolore reprehenderit
-          laborum ipsa esse in iste impedit ipsam deleniti dolor voluptatibus id
-          aspernatur nemo quis dolores voluptatum dolorum fuga blanditiis? Optio
-          nemo magni ea veniam iure eius ipsa nihil odit, eligendi tenetur
-          labore libero ratione corporis quaerat accusamus repudiandae. Sit
-          excepturi nostrum accusamus officiis, laborum non totam cum qui quis
-          ex eveniet dolor repudiandae ut aliquam deleniti iure recusandae iste!
-          Velit repellat eveniet accusantium nulla? Placeat fugiat totam quam
-          consequatur ipsam laboriosam ex excepturi, quo nam, ipsum beatae iure
-          officiis sit cupiditate sed, ipsa corporis. Perspiciatis modi maxime
-          exercitationem. Nostrum sequi dignissimos ipsa dolor et. Delectus
-          obcaecati temporibus, magnam cumque quod sequi voluptatum rem enim
-          suscipit excepturi distinctio, ab totam adipisci eaque corrupti
-          impedit omnis laudantium atque molestias ullam ea dolores unde
-          accusamus! Accusantium sint ducimus molestiae saepe alias corporis
-          nostrum aspernatur, dolores molestias deserunt quis excepturi eveniet
-          illum! Sint praesentium numquam corporis magni fugit, quia assumenda
-          ea aperiam accusantium vero libero recusandae expedita? Minima
-          expedita architecto facilis quod nulla placeat, ullam reiciendis
-          tenetur est in earum ipsa vel, dolorum provident voluptate excepturi
-          ratione nostrum officia quasi delectus suscipit! Autem fugit, eaque
-          blanditiis dignissimos esse quibusdam unde amet aliquam! Lorem ipsum
-          dolor sit, amet consectetur adipisicing elit. Ullam fugiat sunt culpa
-          ab asperiores nesciunt dolores natus porro rerum tempora mollitia
-          sapiente et expedita, tempore soluta molestias dolorem, magni numquam,
-          iste optio impedit qui non possimus aut. Quam et distinctio voluptatum
-          velit repudiandae debitis sit. Veritatis rem eos facere tempore.
-        </div>
-      </Container>
-    </>
+        <SustainabilityBar />
+        <hr className="hrSection1 px-5 me-5" />
+        <Years />
+        <hr className="hrSection1 px-5 me-5" />
+        <LoanImport
+          loan={loanRequest}
+          total={totalImportImmobile}
+          onClickHandler={circleButtonModifier}
+        />
+        <hr className="hrSection1 px-5 me-5" />
+        <TotalImport
+          loan={loanRequest}
+          total={totalImportImmobile}
+          onClickHandler={circleButtonModifier}
+        />
+        <hr className="hrSection1 px-5 me-5" />
+        <p className="text-center pb-4">
+          Le condizioni potrebbero variare in base al tuo ISEE
+        </p>
+      </Row>
+    </Container>
   );
 };
 

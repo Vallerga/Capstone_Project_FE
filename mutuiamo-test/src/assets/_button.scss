@@ -6,5 +6,24 @@
   }
   
   .redButton:hover {
-    background-color: $lightRed !important;
+    background-color: $lightRedDanger !important;
+  }
+
+  .circleButton {
+    border-radius: 50%;
+    background-color: $grey3;
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+  }
+
+  .circleButton:hover {
+    background-color: $grey1;
+  }
+
+  .circleButton:active {
+    background-color: $grey0;
+    color: white;
   }

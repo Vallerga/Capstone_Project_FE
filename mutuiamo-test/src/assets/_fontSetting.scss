@@ -14,7 +14,7 @@ h1 {
     Helvetica Neue, sans-serif;
   font-size: 2.8rem;
   padding: 10px 0;
-  text-shadow: 1px 1px grey;
+  text-shadow: 1px 1px $grey1;
 }
 
 h2 {
@@ -31,13 +31,13 @@ p {
 }
 
 hr {
-  border: 1px solid $shadow1;
+  border: 1px solid $grey1;
   margin: 0;
   padding: 0;
 }
 
 .lightGreytext {
-  color: $shadow1;
+  color: $grey1;
   font-size: 0.8rem;
 }
 
@@ -50,6 +50,10 @@ hr {
   font-size: 1.1rem;
 }
 
+.bigFont{
+  font-size: 3.5rem;
+}
+
 .infoIcon {
-  color: $shadow1;
+  color: $grey2;
 }

@@ -15,9 +15,9 @@ function Amount() {
 
   return (
     <>
-      <div className="mb-4">
-        <span className="fs-1 fw-bold">{Math.floor(importoMensile)},</span>
-        <span className="fs-4 fw-bold">{decimale}</span>
+      <div className="text-center mb-4">
+        <span className="bigFont fw-bold">{Math.floor(importoMensile)},</span>
+        <span className="fs-3 fw-bold">{decimale}</span>
         <span className="fs-5 ms-1 Greytext">€/mese</span>
       </div>
       <InvisibleForm onMensileChange={gestoreMensile} />

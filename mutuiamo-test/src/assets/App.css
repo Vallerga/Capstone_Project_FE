@@ -9,7 +9,7 @@ h1 {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 2.8rem;
   padding: 10px 0;
-  text-shadow: 1px 1px grey;
+  text-shadow: 1px 1px rgb(180, 180, 180);
 }
 
 h2 {
@@ -45,8 +45,12 @@ hr {
   font-size: 1.1rem;
 }
 
+.bigFont {
+  font-size: 3.5rem;
+}
+
 .infoIcon {
-  color: rgb(180, 180, 180);
+  color: rgb(220, 220, 220);
 }
 
 .redButton {
@@ -58,6 +62,25 @@ hr {
 
 .redButton:hover {
   background-color: #f76970 !important;
+}
+
+.circleButton {
+  border-radius: 50%;
+  background-color: #eeeff1;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+}
+
+.circleButton:hover {
+  background-color: rgb(180, 180, 180);
+}
+
+.circleButton:active {
+  background-color: grey;
+  color: white;
 }
 
 .navBar {
@@ -161,8 +184,152 @@ hr {
   font-size: 1rem;
 }
 
+.section {
+  background: white;
+  box-shadow: 0 0 2px 1px rgb(220, 220, 220);
+}
+
+.fixVariable {
+  background-color: rgb(220, 220, 220);
+  border-radius: 15px;
+  padding: 5px 5px;
+  width: 400px;
+  color: black;
+  font-size: 1.2rem !important;
+}
+
+.rateButton {
+  background-color: transparent;
+  border-radius: 15px;
+  padding: 15px 0px;
+  width: 200px;
+}
+
+.rateButton:hover {
+  background-color: #f76970;
+  color: white;
+}
+
+.selectedRate {
+  background-color: #ed3b44;
+  color: white;
+}
+
+.sustainabilityBar {
+  font-size: 1.2rem !important;
+}
+
+.bassa {
+  background-color: #fae5ec;
+  border-radius: 30px 0px 0 30px;
+  padding: 15px 0px;
+  height: 60px;
+  width: 190px;
+  color: #ed3b44;
+  box-shadow: inset -2px 0px 0px 6px white;
+}
+
+.bassa:hover {
+  background-color: #f76970;
+  color: white;
+}
+
+.media {
+  background-color: #fef1da;
+  padding: 15px 0px;
+  margin: 0 -5px;
+  height: 60px;
+  width: 190px;
+  color: #E9D502;
+  box-shadow: inset 0px 0px 0px 6px white;
+}
+
+.media:hover {
+  background-color: #f7ec79;
+  color: white;
+}
+
+.alta {
+  background-color: #e7fae5;
+  border-radius: 0 30px 30px 0;
+  padding: 15px 0px;
+  height: 60px;
+  width: 190px;
+  color: #1bbb89;
+  box-shadow: inset -2px 0px 0px 6px white;
+}
+
+.alta:hover {
+  background-color: #75fad0;
+  color: white;
+}
+
+.altaSost {
+  background-color: #1bbb89;
+  color: white;
+  box-shadow: inset 0px 0px 0px 6px #e7fae5;
+}
+
+.mediaSost {
+  background-color: #E9D502;
+  color: white;
+  box-shadow: inset -2px 0px 0px 6px #fef1da;
+}
+
+.bassaSost {
+  background-color: #ed3b44;
+  color: white;
+  box-shadow: inset -2px 0px 0px 6px #fae5ec;
+}
+
+.hrSection1 {
+  width: 25vw;
+  margin: 20px 0;
+  padding: 0 15px;
+}
+
+.duration {
+  background-color: white;
+  border-top: 1px solid rgb(220, 220, 220);
+  border-bottom: 1px solid rgb(220, 220, 220);
+  border-left: 1px solid rgb(220, 220, 220);
+  padding: 10px 0px;
+  width: 97px;
+  font-weight: bold;
+  color: Black;
+}
+
+.first {
+  border-radius: 5px 0 0 5px;
+}
+
+.sixth {
+  border-radius: 0 5px 5px 0;
+  border-right: 1px solid rgb(220, 220, 220);
+}
+
+.duration:hover {
+  background-color: #fae5ec;
+  color: white;
+}
+
+.yearSelected {
+  background-color: #ed3b44;
+  color: white;
+}
+
+.percentBox {
+  background-color: #eeeff1;
+  border-radius: 8px;
+}
+
 body {
   background: #f7f8fa;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
 }
 
 .mainContainer {
@@ -188,44 +355,4 @@ body {
   .mainContainer {
     padding: 0 10%;
   }
-}
-.section {
-  background: white;
-  box-shadow: 0 0 2px 1px rgb(220, 220, 220);
-}
-
-.fixVariable {
-  background-color: rgb(220, 220, 220);
-  border-radius: 15px;
-  padding: 5px 5px;
-  width: 300px;
-  color: black;
-}
-
-.fix {
-  background-color: transparent;
-  border-radius: 10px;
-  padding: 5px 0px;
-  width: 140px;
-}
-
-.fix:hover {
-  background-color: #f76970;
-  color: white;
-}
-
-.variable {
-  background-color: transparent;
-  border-radius: 10px;
-  padding: 5px 0px;
-  width: 140px;
-}
-
-.variable:hover {
-  background-color: #f76970;
-  color: white;
-}
-
-.selectedRate {
-  background-color: #ed3b44;
 }/*# sourceMappingURL=App.css.map */

@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import VisibleForm from "./VisibleForm";
+import { useDispatch } from "react-redux";
+import { setLoanAction, setMonthlyRateAction, setRateAction, setTAEGAction, setYearAction } from "../../redux/actions";
 
 const InvisibleForm = ({ onMensileChange }) => {
+  const dispatch = useDispatch();
   const [importoMutuo, setImportoMutuo] = useState(100000);
   const [tasso, setTasso] = useState(0.036);
   const [TAEG, setTAEG] = useState(0.0387);
@@ -9,7 +12,7 @@ const InvisibleForm = ({ onMensileChange }) => {
   const [importoMensile, setImportoMensile] = useState(0);
   const [tassoPercentuale, setTassoPercentuale] = useState(2);
   const [TAEGPercentuale, setTAEGPercentuale] = useState(3);
-  const [sostenibilità, setSostenibilità] = useState(3);
+
 
   const calculateImportoMensile = () => {
     const r = TAEG / 12;
@@ -18,16 +21,15 @@ const InvisibleForm = ({ onMensileChange }) => {
       (importoMutuo * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
     setImportoMensile(ImportoMensile);
     onMensileChange(ImportoMensile);
-    settingVisibleForm(tasso, TAEG, sostenibilità);
+    settingVisibleForm(tasso, TAEG);
   };
 
-  const settingVisibleForm = (param1, param2, param3) => {
-    let param = param1 * 100;    
+  const settingVisibleForm = (param1, param2) => {
+    let param = param1 * 100;
     setTassoPercentuale(param);
-    param = param2 * 100;    
-    setTAEGPercentuale(param)    
-    setSostenibilità(param3);
-  }
+    param = param2 * 100;
+    setTAEGPercentuale(param);
+  };
 
   const calcolaImportoMensileAutomatico = () => {
     const r = TAEG / 12;
@@ -36,15 +38,19 @@ const InvisibleForm = ({ onMensileChange }) => {
       (importoMutuo * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
     setImportoMensile(ImportoMensile);
     onMensileChange(ImportoMensile);
-    settingVisibleForm(tasso, TAEG, sostenibilità);
+    settingVisibleForm(tasso, TAEG);
   };
 
   useEffect(() => {
     calcolaImportoMensileAutomatico();
   });
-  
+
   return (
     <>
+      <VisibleForm
+        tasso={tassoPercentuale}
+        TAEG={TAEGPercentuale}        
+      />
       <div className="d-none">
         Importo mutuo:
         <input
@@ -72,12 +78,21 @@ const InvisibleForm = ({ onMensileChange }) => {
           value={durata}
           onChange={(e) => setDurata(e.target.value)}
         />
-        <button onClick={calculateImportoMensile}>
+        <button
+          onClick={() => {
+            /* console.log("click event"); */
+            calculateImportoMensile();
+            dispatch(setLoanAction(importoMutuo))
+            dispatch(setRateAction(tasso))
+            dispatch(setTAEGAction(TAEG))
+            dispatch(setMonthlyRateAction(importoMensile))
+            dispatch(setYearAction(durata))
+          }}
+        >
           Calcola import mensile
         </button>
         <div>Importo mensile: {importoMensile.toFixed(2)}€</div>
       </div>
-      <VisibleForm tasso={tassoPercentuale} TAEG={TAEGPercentuale} sostenibilità={sostenibilità} />
     </>
   );
 };

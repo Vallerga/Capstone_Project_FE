@@ -1,5 +1,5 @@
 import { useState } from "react";
-import RatingButton from "./RatingButton";
+import RateButton from "./RateButton";
 
 
 const RateBar = () => {
@@ -11,17 +11,17 @@ const RateBar = () => {
   
     return (
         <div className="fixVariable my-3 d-flex justify-content-between align-items-center">
-            <RatingButton
+            <RateButton
                 rate={"Fisso"}
-                setting={"fix text-center "}
+                setting={"rateButton text-center "}
                 selected={checker === "Fisso"}
-                onClick={() => handleButtonClick("Fisso")}
+                handleButtonClick={handleButtonClick}
             />
-            <RatingButton
+            <RateButton
                 rate={"Variabile"}
-                setting={"variable text-center "}
+                setting={"rateButton text-center "}
                 selected={checker === "Variabile"}
-                onClick={() => handleButtonClick("Variabile")}
+                handleButtonClick={handleButtonClick}
             />
         </div>
     );

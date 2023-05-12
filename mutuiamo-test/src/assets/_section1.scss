@@ -1,0 +1,140 @@
+.section {
+  background: $bgWhite;
+  box-shadow: 0 0 2px 1px $grey2;
+}
+
+// rate bar
+.fixVariable {
+  background-color: $grey2;
+  border-radius: 15px;
+  padding: 5px 5px;
+  width: 400px;
+  color: black;
+  font-size: 1.2rem !important;
+}
+
+.rateButton {
+  background-color: transparent;
+  border-radius: 15px;
+  padding: 15px 0px;
+  width: 200px;
+}
+
+.rateButton:hover {
+  background-color: $lightRedDanger;
+  color: white;
+}
+
+.selectedRate {
+  background-color: $redDanger;
+  color: white;
+}
+
+// sustainability bar
+.sustainabilityBar {
+  font-size: 1.2rem !important;
+}
+
+.bassa {
+  background-color: $VeryLightRedDanger;
+  border-radius: 30px 0px 0 30px;
+  padding: 15px 0px;
+  height: 60px;
+  width: 190px;
+  color: $redDanger;
+  box-shadow: inset -2px 0px 0px 6px white;
+}
+
+.bassa:hover {
+  background-color: $lightRedDanger;
+  color: white;
+}
+
+.media {
+  background-color: $VeryLightYellowWarning;  
+  padding: 15px 0px;
+  margin: 0 -5px;
+  height: 60px;
+  width: 190px;
+  color: $yellowWarming;
+  box-shadow: inset 0px 0px 0px 6px white;
+}
+
+.media:hover {
+  background-color: $lightYellowWarning;
+  color: white;
+}
+
+.alta {
+  background-color: $VeryLightGreenSuccess;
+  border-radius: 0 30px 30px 0;
+  padding: 15px 0px;
+  height: 60px;
+  width: 190px;
+  color: $greenSuccess;
+  box-shadow: inset -2px 0px 0px 6px white;
+}
+
+.alta:hover {
+  background-color: $lightGreenSuccess;
+  color: white;
+}
+
+.altaSost {
+  background-color: $greenSuccess;
+  color: white;
+  box-shadow: inset 0px 0px 0px 6px $VeryLightGreenSuccess;
+}
+
+.mediaSost {
+  background-color: $yellowWarming;
+  color: white;
+  box-shadow: inset -2px 0px 0px 6px $VeryLightYellowWarning;
+}
+
+.bassaSost {
+  background-color: $redDanger;
+  color: white;
+  box-shadow: inset -2px 0px 0px 6px $VeryLightRedDanger;
+}
+
+.hrSection1 {
+  width: 25vw;
+  margin: 20px 0;
+  padding: 0 15px;
+}
+
+.duration {
+  background-color: white;
+  border-top: 1px solid $grey2;
+  border-bottom: 1px solid $grey2;
+  border-left: 1px solid $grey2;
+  padding: 10px 0px;
+  width: 97px;
+  font-weight: bold;
+  color: Black;
+}
+
+.first {
+  border-radius: 5px 0 0 5px;
+}
+
+.sixth {
+  border-radius: 0 5px 5px 0;
+  border-right: 1px solid $grey2;
+}
+
+.duration:hover {
+  background-color: $VeryLightRedDanger;
+  color: white;
+}
+
+.yearSelected {
+  background-color: $redDanger;
+  color: white;
+}
+
+.percentBox {
+  background-color: $grey3;
+  border-radius: 8px;
+}

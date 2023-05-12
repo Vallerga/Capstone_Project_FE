@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 const AsideProfile = () => {
   return (
     <>
-      <div className="rounded-4 section d-flex flex-column align-items-center pt-5 my-4">
+      <div className="rounded-4 section d-flex flex-column align-items-center pt-5 my-4 me-3">
         <div className="d-flex flex-column align-items-center px-xl-5">
           <div>
             <img
@@ -35,8 +35,8 @@ const AsideProfile = () => {
           MOSTRAMI I MUTUI
         </Button>
       </div>
-      <div className="d-flex justify-content-center mb-4">
-        <div className="appleLogo d-flex align-items-center me-2">
+      <div className="d-flex justify-content-center mt-4 mb-4">
+        <div className="appleLogo d-flex align-items-center me-3">
           <div className="appleIcon">
             <AiFillApple />
           </div>
