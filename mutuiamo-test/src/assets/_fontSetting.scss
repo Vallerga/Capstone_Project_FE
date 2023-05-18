@@ -42,7 +42,7 @@ hr {
 }
 
 .Greytext {
-  color: grey;
+  color: $grey0;
 }
 
 .normalDarkText {
@@ -64,8 +64,5 @@ hr {
 }
 
 .credit {
-  font-size: 1rem;
   margin-bottom: 200px;
-  text-align: center;
-  line-height: 1.4rem;
 }

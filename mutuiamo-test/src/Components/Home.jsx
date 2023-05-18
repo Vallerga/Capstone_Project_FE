@@ -114,7 +114,7 @@ const Home = () => {
             <Button className="redButton2 align-self-stretch" variant="danger">
               SCARICA L'APP GRATUITA
             </Button>
-            <p className="fs-6">Accesso diretto. Nessun vincolo.</p>
+            <p className="fs-6 Greytext">Accesso diretto. Nessun vincolo.</p>
             <div className="d-flex flex-column align-items-center py-3">
               <div className="creditCard d-flex flex-column align-items-start">
                 <h3 className="creditCardTitle  px-4 pt-2 mb-0 d-flex align-items-center">
@@ -215,14 +215,14 @@ const Home = () => {
               <div className="tickBoxNotChecked align-self-start me-4 fs-4"></div>
               <div>
                 <div className="tickBoxText">Scarica l'app di Mutuiamo</div>
-                <p>
+                <p className="fs-6 Greytext">
                   Visualizza i dettagli dei mutui e richiedi supporto gratuito
                   fino all'ottenimento.
                 </p>
                 <Button className="redButton2" variant="danger">
                   SCARICA L'APP GRATUITA
                 </Button>
-                <p className="text-center">Accesso diretto. Nessun vincolo.</p>
+                <p className="text-center fs-6 Greytext">Accesso diretto. Nessun vincolo.</p>
               </div>
             </div>
             <hr className="hrSection3" />
@@ -230,7 +230,7 @@ const Home = () => {
               <div className="tickBoxNotChecked1 align-self-start me-4 fs-4"></div>
               <div>
                 <div className="tickBoxText">Parla con il tuo advisor</div>
-                <p>
+                <p className="fs-6 Greytext">
                   Fissa una consulenza telefonica senza vincoli per parlare del
                   mutuo e ricevere consigli e dritte.
                 </p>
@@ -240,7 +240,7 @@ const Home = () => {
                 >
                   RICHIEDI CONSULENZA GRATUITA
                 </Button>
-                <p className="text-center">
+                <p className="text-center fs-6 Greytext">
                   Zero vincoli. Zero costi di intermediazione.
                 </p>
               </div>
@@ -248,7 +248,7 @@ const Home = () => {
           </div>
         </Row>
       </Container>
-      <p className="credit">Il risultato della stima è indicativo. Il tasso indicato corrisponde al tasso più bassi tra i prodotti di mutuo delle banche convenzionate di Mutuiamo s.r.l. I dati finanziari effettivi saranno confermati dai singoli istituti di credito al momento della stipula. questa stima non ha nessun valore ai fini della concessione del mutuo.</p>
+      <p className="text-center fs-6 Greytext credit">Il risultato della stima è indicativo. Il tasso indicato corrisponde al tasso più bassi tra i prodotti di mutuo delle banche convenzionate di Mutuiamo s.r.l. I dati finanziari effettivi saranno confermati dai singoli istituti di credito al momento della stipula. questa stima non ha nessun valore ai fini della concessione del mutuo.</p>
     </>
   );
 };
