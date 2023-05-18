@@ -40,7 +40,7 @@
   border-radius: 30px 0px 0 30px;
   padding: 15px 0px;
   height: 60px;
-  width: 190px;
+  width: 200px;
   color: $redDanger;
   box-shadow: inset -2px 0px 0px 6px white;
 }
@@ -55,7 +55,7 @@
   padding: 15px 0px;
   margin: 0 -5px;
   height: 60px;
-  width: 190px;
+  width: 200px;
   color: $yellowWarming;
   box-shadow: inset 0px 0px 0px 6px white;
 }
@@ -70,7 +70,7 @@
   border-radius: 0 30px 30px 0;
   padding: 15px 0px;
   height: 60px;
-  width: 190px;
+  width: 200px;
   color: $greenSuccess;
   box-shadow: inset -2px 0px 0px 6px white;
 }
@@ -137,4 +137,34 @@
 .percentBox {
   background-color: $grey3;
   border-radius: 8px;
+}
+
+@media screen and (max-width: 1600px) {
+  .fixVariable {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width:1200px) and (max-width: 1400px) {
+  .fixVariable {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width:1000px) and (max-width: 1200px) {
+  .fixVariable {
+    width: 150px;    
+  }
+}
+
+@media screen and (min-width:770px) and (max-width: 1000px) {
+  .fixVariable {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width:300px) and (max-width: 770px) {
+  .fixVariable {
+    width: 150px;
+  }
 }

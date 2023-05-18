@@ -1,7 +1,10 @@
 import { Col, Row } from "react-bootstrap";
-import CircleButton from "./CircleButton";
+import CircleButton from "./button/CircleButton";
+import { useSelector } from "react-redux";
 
 const TotalImport = ({ loan, total, onClickHandler }) => {
+  let actualLoanRequest = useSelector((state) => state.LoanRequest.actualLoanRequest);
+  let actualTotalImport = useSelector((state) => state.LoanRequest.actualTotalImport);
   return (
     <Row className="py-3">
       <Col xs={12} className="">
@@ -14,12 +17,12 @@ const TotalImport = ({ loan, total, onClickHandler }) => {
         <div className="d-flex align-items-center">
           <p>
             <strong>
-              {total}
+              {actualTotalImport}
               <span className="ms-1">€</span>
             </strong>
           </p>
           <p className="ms-4  p-2 fs-6 percentBox">
-            {Math.floor((loan / total) * 100)}
+            {/* {Math.floor((loan / total) * 100)} props implementation */}{Math.floor((actualLoanRequest / actualTotalImport) * 100)}
             <span className="">%</span>
           </p>
         </div>

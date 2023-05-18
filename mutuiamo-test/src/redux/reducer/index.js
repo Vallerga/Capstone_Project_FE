@@ -10,18 +10,15 @@ import {SET_MONTHLYRATE} from "../actions";
 
 const initialState = {
   LoanRequest: {
+    year: 5,
     actualLoanRequest: 100000,
-    actualtotalImport: 200000,
-    rateFixOrVar: "fisso",
-    rate: 3,
-    TAEG: 4,
-    year: 25,
-    sustainability: "alta",
-    monthlyRate: 500,
-  },
-  favourite: {
-    list: [],
-  },
+    actualTotalImport: 200000,
+    rateFixOrVar: "Fisso",
+    rate: 3.6,
+    TAEG: 3.87,    
+    sustainability: "Alta",
+    monthlyRate: 520.68,
+  }
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -39,7 +36,7 @@ const mainReducer = (state = initialState, action) => {
         ...state,
         LoanRequest: {
           ...state.LoanRequest,
-          actualtotalImport: action.payload,
+          actualTotalImport: action.payload,
         },
       };
       case SET_RATE_FIX_OR_VARIABLE:

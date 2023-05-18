@@ -1,29 +1,50 @@
 .redButton {
-    border-radius: 10px !important;
-    padding: 20px 0px !important;
-    background-color: $redDanger;
-    margin: 35px;
-  }
+  border-radius: 10px !important;
+  padding: 20px 0px !important;
+  background-color: $redDanger;
+  margin: 35px;
+}
+
+.redButton2 {
+  border-radius: 10px !important;
+  padding: 20px 22% !important;
+  background-color: $redDanger;
+  margin: 35px 0 20px;
+}
+
+.redButton:hover {
+  background-color: $lightRedDanger !important;
+}
+
+.outlineButtonBlack {
+  border-radius: 10px !important;
+  padding: 20px 15% !important;
+  background-color: $bgWhite;
+  margin: 35px 0 10px;
+  border: 1px solid black;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.outlineButtonBlack:hover {
   
-  .redButton:hover {
-    background-color: $lightRedDanger !important;
-  }
+}
 
-  .circleButton {
-    border-radius: 50%;
-    background-color: $grey3;
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
-    font-weight: 500;
-    color: black;
-  }
+.circleButton {
+  border-radius: 50%;
+  background-color: $grey3;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+}
 
-  .circleButton:hover {
-    background-color: $grey1;
-  }
+.circleButton:hover {
+  background-color: $grey1;
+}
 
-  .circleButton:active {
-    background-color: $grey0;
-    color: white;
-  }
+.circleButton:active {
+  background-color: $grey0;
+  color: white;
+}

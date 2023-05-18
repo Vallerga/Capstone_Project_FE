@@ -60,6 +60,13 @@ hr {
   margin: 35px;
 }
 
+.redButton2 {
+  border-radius: 10px !important;
+  padding: 20px 20% !important;
+  background-color: #ed3b44;
+  margin: 35px 0 20px;
+}
+
 .redButton:hover {
   background-color: #f76970 !important;
 }
@@ -224,7 +231,7 @@ hr {
   border-radius: 30px 0px 0 30px;
   padding: 15px 0px;
   height: 60px;
-  width: 190px;
+  width: 200px;
   color: #ed3b44;
   box-shadow: inset -2px 0px 0px 6px white;
 }
@@ -239,7 +246,7 @@ hr {
   padding: 15px 0px;
   margin: 0 -5px;
   height: 60px;
-  width: 190px;
+  width: 200px;
   color: #E9D502;
   box-shadow: inset 0px 0px 0px 6px white;
 }
@@ -254,7 +261,7 @@ hr {
   border-radius: 0 30px 30px 0;
   padding: 15px 0px;
   height: 60px;
-  width: 190px;
+  width: 200px;
   color: #1bbb89;
   box-shadow: inset -2px 0px 0px 6px white;
 }
@@ -321,6 +328,27 @@ hr {
 .percentBox {
   background-color: #eeeff1;
   border-radius: 8px;
+}
+
+.section2Title {
+  padding: 0 100px;
+}
+
+.section2Card {
+  padding: 0 50px;
+  background-color: #f7f8fa;
+  border-radius: 15px;
+}
+
+.section2Text {
+  color: grey;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.creditCard {
+  background-color: white;
+  box-shadow: 1;
 }
 
 body {

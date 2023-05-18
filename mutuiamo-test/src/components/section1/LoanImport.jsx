@@ -1,7 +1,9 @@
 import { Col, Row } from "react-bootstrap";
-import CircleButton from "./CircleButton";
+import CircleButton from ".//button/CircleButton";
+import { useSelector } from "react-redux";
 
 const LoanImport = ({ loan, total, onClickHandler }) => {
+  const actualLoanRequest = useSelector((state) => state.LoanRequest.actualLoanRequest);
   return (
     <Row className="py-3">
       <Col xs={12}>
@@ -14,7 +16,7 @@ const LoanImport = ({ loan, total, onClickHandler }) => {
         <div className="d-flex align-items-center">
           <p>
             <strong>
-              {loan}
+              {actualLoanRequest}
               <span className="ms-1">€</span>
             </strong>
           </p>

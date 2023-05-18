@@ -13,7 +13,7 @@ const InvisibleForm = ({ onMensileChange }) => {
   const [tassoPercentuale, setTassoPercentuale] = useState(2);
   const [TAEGPercentuale, setTAEGPercentuale] = useState(3);
 
-
+  // function for dev purpose and testing
   const calculateImportoMensile = () => {
     const r = TAEG / 12;
     const n = durata * 12;
@@ -24,6 +24,7 @@ const InvisibleForm = ({ onMensileChange }) => {
     settingVisibleForm(tasso, TAEG);
   };
 
+  // convert value in percentage
   const settingVisibleForm = (param1, param2) => {
     let param = param1 * 100;
     setTassoPercentuale(param);
@@ -31,6 +32,7 @@ const InvisibleForm = ({ onMensileChange }) => {
     setTAEGPercentuale(param);
   };
 
+  // function automatically call at the 1st render
   const calcolaImportoMensileAutomatico = () => {
     const r = TAEG / 12;
     const n = durata * 12;
@@ -41,9 +43,9 @@ const InvisibleForm = ({ onMensileChange }) => {
     settingVisibleForm(tasso, TAEG);
   };
 
-  useEffect(() => {
+  /* useEffect(() => { // <--- activate for standard page setting
     calcolaImportoMensileAutomatico();
-  });
+  }); */
 
   return (
     <>
@@ -81,7 +83,7 @@ const InvisibleForm = ({ onMensileChange }) => {
         <button
           onClick={() => {
             /* console.log("click event"); */
-            calculateImportoMensile();
+            // calculateImportoMensile(); // <--- activate for props version
             dispatch(setLoanAction(importoMutuo))
             dispatch(setRateAction(tasso))
             dispatch(setTAEGAction(TAEG))

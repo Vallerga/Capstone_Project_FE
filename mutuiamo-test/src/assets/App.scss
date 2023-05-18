@@ -52,3 +52,137 @@ body {
     padding: 0 10%;
   }
 }
+
+// Section 2
+.section2Title {
+  padding: 0 100px;
+}
+
+.section2Card {
+  padding: 0 50px;
+  background-color: $bgGrey;
+  border-radius: 15px;
+}
+
+.section2Text {
+  color: $grey0;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.gradientDiv {
+  color: black;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+    from(rgba(0,0,0,1)) , to(rgba(0,0,0,0)));
+}
+
+.creditCard {
+  background-color: $bgWhite;
+  box-shadow: 1px black;
+  width: 400px;
+  height: 220px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 2px 2px $grey2;
+}
+
+.creditCard1 {
+  background-color: $bgWhite;
+  box-shadow: 1px black;
+  width: 400px;
+  height: 80px;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 0px 0px 2px 2px $grey2;
+}
+
+.creditCardTitle {
+  color: $greenCreditCard;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: -2px;
+}
+
+.cardLogo1 {
+  width: 60px;
+}
+
+.cardLogo2 {
+  width: 60px;
+}
+
+.cardLogo3 {
+  width: 35px;
+  margin-right: 5px;
+  border: 1px solid $greenCreditCard;
+}
+
+.blur {
+  filter: blur(5px);
+  line-height: 1.5rem;
+}
+
+// section 3
+
+.section3 {
+  padding: 25px 16% 0;
+}
+
+.section3Title {
+  padding: 20px 100px;
+}
+
+.smallBarCheck {
+  border: 2.5px solid $greenSuccess;
+  width: 110px;
+  margin-left: 10px;
+  border-radius:10px;
+}
+
+.smallBar {
+  border: 2.5px solid $grey2;
+  width: 110px;
+  margin-left: 10px;
+  border-radius:10px;
+}
+
+.tickBoxChecked {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: $bgWhite;
+  border: 3px solid $greenSuccess;
+  color: $greenSuccess;
+}
+
+.tickBoxNotChecked {
+  border-radius: 50%;
+  width: 55px;
+  height: 40px;
+  background-color: $bgWhite;
+  border: 3px solid $grey2;
+}
+
+.tickBoxNotChecked1 {
+  border-radius: 50%;
+  width: 65px;
+  height: 40px;
+  background-color: $bgWhite;
+  border: 3px solid $grey2;
+}
+
+.tickBoxText {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.hrSection3 {
+  border: 1px solid $grey0;
+  margin: 30px 0;
+}
+
+.footer {
+  background: black; 
+  color:white;
+  height: 80px;
+  font-size: 1.2rem;
+}

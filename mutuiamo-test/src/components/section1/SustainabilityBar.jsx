@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SustainabilityButton from "./SustainabilityButton";
+import SustainabilityButton from "./button/SustainabilityButton";
 import { Col, Row } from "react-bootstrap";
 
 const SustainabilityBar = () => {
@@ -13,21 +13,21 @@ const SustainabilityBar = () => {
     <Row>
       <Col className="sustainabilityBar mb-3 d-flex">
         <SustainabilityButton
-          rate={"Bassa"}
+          type={"Bassa"}
           setting={"bassa text-center"}
           checker={checker}
           handleButtonClick={handleButtonClick}
         />
 
         <SustainabilityButton
-          rate={"Media"}
+          type={"Media"}
           setting={"media text-center"}
           checker={checker}
           handleButtonClick={handleButtonClick}
         />
 
         <SustainabilityButton
-          rate={"Alta"}
+          type={"Alta"}
           setting={"alta text-center"}
           checker={checker}
           handleButtonClick={handleButtonClick}

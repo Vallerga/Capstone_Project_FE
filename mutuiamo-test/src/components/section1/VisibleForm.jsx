@@ -8,7 +8,6 @@ const VisibleForm = ({ tasso, TAEG }) => {
   const [decimaleTAEG, setDecimaleTAEG] = useState("");
   const rateStore = useSelector((state) => state.LoanRequest.rate);
   const TAEGStore = useSelector((state) => state.LoanRequest.TAEG);
-  const sustainabilityStore = useSelector((state) => state.LoanRequest.sustainability);
 
   const gestoreTasso = (value) => {
     setDecimaleTasso(() => {
@@ -23,11 +22,11 @@ const VisibleForm = ({ tasso, TAEG }) => {
       return buffer.toString().slice(2, 4);
     });
   };
-
+  // use tasso and TAEG props if you want to use props
   useEffect(() => {
-    gestoreTasso(tasso);
-    gestoreTAEG(TAEG);    
-  }, [tasso, TAEG]);
+    gestoreTasso(rateStore);
+    gestoreTAEG(TAEGStore);    
+  }, [rateStore, TAEGStore]);
 
   return (    
       <Row className="fs-6">
@@ -37,7 +36,7 @@ const VisibleForm = ({ tasso, TAEG }) => {
           </div>
           <div className="fs-5 me-5">
             <strong>
-              <span>{Math.floor(tasso)},</span>
+              <span>{Math.floor(rateStore)},</span> {/* use tasso props if you want to use props */}
               {decimaletasso}%
             </strong>
           </div>
@@ -47,7 +46,7 @@ const VisibleForm = ({ tasso, TAEG }) => {
             TAEG <AiFillInfoCircle className="infoIcon fs-4 ms-2" />
           </div>
           <div className="me-5">
-            <span>{Math.floor(TAEG)},</span>
+            <span>{Math.floor(TAEG)},</span> {/* use TAEG props if you want to use props */}
             {decimaleTAEG}%
           </div>
         </div>
