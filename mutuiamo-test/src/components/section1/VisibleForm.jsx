@@ -34,7 +34,7 @@ const VisibleForm = ({ tasso, TAEG }) => {
           <div>
             Miglior Tasso <AiFillInfoCircle className="infoIcon fs-4 ms-2 d-none d-md-inline-block" />
           </div>
-          <div className="middleFont me-5">
+          <div className="middleFont me-0 me-lg-5">
             <strong>
               <span>{Math.floor(rateStore)},</span> {/* use tasso props if you want to use props */}
               {decimaletasso}%
@@ -45,7 +45,7 @@ const VisibleForm = ({ tasso, TAEG }) => {
           <div>
             TAEG <AiFillInfoCircle className="infoIcon fs-4 ms-2 d-none d-md-inline-block" />
           </div>
-          <div className="smallFont me-5">
+          <div className="smallFont me-0 me-lg-5">
             <span>{Math.floor(TAEG)},</span> {/* use TAEG props if you want to use props */}
             {decimaleTAEG}%
           </div>

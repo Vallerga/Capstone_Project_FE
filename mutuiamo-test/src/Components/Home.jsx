@@ -98,7 +98,7 @@ const Home = () => {
       </Container>
       {/* SECTION 2 */}
       <Container className="container-fluid p-5 sectionContainer section rounded-4 mb-5">
-        <Row className="d-flex flex-column align-items-center px-5">
+        <Row className="d-flex flex-column align-items-center p-0 px-lg-5">
           <h2 className="section2Title">
             Antonio, ora che hai una stima, vai al dettaglio dei mutui.
           </h2>
@@ -197,15 +197,15 @@ const Home = () => {
             <div className="smallBar"></div>
           </div>
           <div className="section3">
-            <div className="d-flex align-items-center">
-              <div className="tickBoxChecked me-4 d-flex align-items-center justify-content-center fs-4">
+            <div className="d-flex flex-column flex-lg-row align-items-center">
+              <div className="tickBoxChecked me-lg-4 align-self-center align-self-lg-start d-flex align-items-center justify-content-center fs-4">
                 <AiOutlineCheck />
               </div>
               <div className="tickBoxText">Fai il questionario in 2 minuti</div>
             </div>
             <hr className="hrSection3" />
-            <div className="d-flex align-items-center">
-              <div className="tickBoxChecked1 me-4 d-flex align-items-center justify-content-center fs-4">
+            <div className="d-flex flex-column flex-lg-row align-items-center">
+              <div className="tickBoxChecked1 align-self-center align-self-lg-start me-lg-4 d-flex align-items-center justify-content-center fs-4">
                 <AiOutlineCheck />
               </div>
               <div className="tickBoxText">Visualizza la tua stima</div>
