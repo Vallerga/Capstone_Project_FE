@@ -103,7 +103,7 @@ const Home = () => {
             Antonio, ora che hai una stima, vai al dettaglio dei mutui.
           </h2>
           <div className="py-2 section2Card text-center">
-            <h2 className="pt-4 pb-1 fs-4">
+            <h2 className="pt-4 pb-1 section2CardTitle">
               Visualizza i mutui nell'app{" "}
               <span className="text-danger">(5)</span>
             </h2>
@@ -117,22 +117,22 @@ const Home = () => {
             <p className="fs-6 Greytext">Accesso diretto. Nessun vincolo.</p>
             <div className="d-flex flex-column align-items-center py-3">
               <div className="creditCard d-flex flex-column align-items-start">
-                <h3 className="creditCardTitle  px-4 pt-2 mb-0 d-flex align-items-center">
+                <h3 className="creditCardTitle  px-4 pt-2 mb-0 d-flex text-center text-xl-start flex-column flex-xl-row align-items-center">
                   INTESA{" "}
                   <img
-                    className="cardLogo1"
+                    className="cardLogo1 d-none d-xl-inline-block"
                     src={require("../assets/image/Intesa.png")}
                     alt="Intesa Logo"
                   />{" "}
-                  SANPAOLO
+                  &nbsp;SANPAOLO
                 </h3>
-                <p className="px-4">Mutuo in tasca</p>
-                <p className="blur ps-4 py-4">
-                  <span className="fs-1">538</span>
-                  <span className="fs-3">,60</span>
-                  <span className="fs-5">€/mese</span>
+                <p className="px-4 d-none d-md-inline-block">Mutuo in tasca</p>
+                <p className="blur d-none d-lg-inline-block ps-4 py-4">
+                  <span className="bigFont">538</span>
+                  <span className="middleFont">,60</span>
+                  <span className="smallFont">€/mese</span>
                 </p>
-                <p className="blur ps-4 pb-2">
+                <p className="blur d-none d-lg-inline-block ps-4 pb-2">
                   <span>tasso 3.60%</span>
                   <span>TEAG 3.87%</span>
                 </p>
@@ -140,23 +140,23 @@ const Home = () => {
             </div>
             <div className="d-flex flex-column align-items-center py-3">
               <div className="creditCard pt-3 d-flex flex-column align-items-start">
-                <h3 className="creditCardTitle fs-5 px-4 pt-2 mb-0 d-flex align-items-center justify-content-around">
+                <h3 className="creditCardTitle fs-5 px-4 pt-0 pt-xl-2 mb-0 d-flex align-items-center justify-content-around">
                   <img
-                    className="cardLogo3"
+                    className="cardLogo3 d-none d-xl-inline-block"
                     src={require("../assets/image/credit_agricole.png")}
                     alt="Intesa Logo"
                   />
                   <strong>CREDIT AGRICOLE</strong>
                 </h3>
-                <p className="px-4">
-                  Mutio Giovani Credit Agricole con CPI Vita
+                <p className="px-4 d-none d-md-inline-block">
+                  Mutui Giovani <span className="d-none d-xl-inline-block">Credit Agricole con CPI Vita</span>
                 </p>
-                <p className="blur ps-4 py-4">
-                  <span className="fs-1">765</span>
-                  <span className="fs-3">,00</span>
-                  <span className="fs-5">€/mese</span>
+                <p className="blur ps-4 py-4 d-none d-lg-inline-block">
+                  <span className="bigFont">765</span>
+                  <span className="middleFont">,00</span>
+                  <span className="smallFont">€/mese</span>
                 </p>
-                <p className="blur ps-4 pb-2">
+                <p className="blur ps-4 pb-2 d-none d-lg-inline-block">
                   <span>tasso 3.60%</span>
                   <span>TEAG 3.87%</span>
                 </p>
@@ -165,15 +165,15 @@ const Home = () => {
             <div className="gradientDiv d-flex flex-column">
               <div className="d-flex flex-column align-items-center py-3">
                 <div className="creditCard1 pt-3 d-flex flex-column align-items-start">
-                  <h3 className="fs-5 px-4 pt-2 mb-0 d-flex align-items-center justify-content-around">
+                  <h3 className="fs-5 text-center text-xl-start px-4 pt-2 mb-0 d-flex align-items-center justify-content-around">
                     <img
-                      className="cardLogo3"
+                      className="cardLogo3 d-none d-xl-inline-block"
                       src={require("../assets/image/BNL.jpg")}
                       alt="Intesa Logo"
                     />
                     <strong>BNL</strong>
                   </h3>
-                  <p className="px-4">BNL Giovani Home</p>
+                  <p className="px-4 d-none d-xl-inline-block">BNL Giovani Home</p>
                 </div>
               </div>
             </div>
@@ -205,17 +205,17 @@ const Home = () => {
             </div>
             <hr className="hrSection3" />
             <div className="d-flex align-items-center">
-              <div className="tickBoxChecked me-4 d-flex align-items-center justify-content-center fs-4">
+              <div className="tickBoxChecked1 me-4 d-flex align-items-center justify-content-center fs-4">
                 <AiOutlineCheck />
               </div>
               <div className="tickBoxText">Visualizza la tua stima</div>
             </div>
             <hr className="hrSection3" />
-            <div className="d-flex align-items-center">
-              <div className="tickBoxNotChecked align-self-start me-4 fs-4"></div>
+            <div className="d-flex flex-column flex-lg-row align-items-center">
+              <div className="tickBoxNotChecked align-self-center align-self-lg-start mb-3 mb-lg-0 me-lg-4 fs-4"></div>
               <div>
                 <div className="tickBoxText">Scarica l'app di Mutuiamo</div>
-                <p className="fs-6 Greytext">
+                <p className="d-none d-sm-inline-block fs-6 Greytext">
                   Visualizza i dettagli dei mutui e richiedi supporto gratuito
                   fino all'ottenimento.
                 </p>
@@ -226,11 +226,11 @@ const Home = () => {
               </div>
             </div>
             <hr className="hrSection3" />
-            <div className="d-flex align-items-center">
-              <div className="tickBoxNotChecked1 align-self-start me-4 fs-4"></div>
+            <div className="d-flex flex-column flex-lg-row align-items-center">
+              <div className="tickBoxNotChecked1 align-self-center align-self-lg-start mb-3 mb-lg-0 me-lg-4 fs-4"></div>
               <div>
                 <div className="tickBoxText">Parla con il tuo advisor</div>
-                <p className="fs-6 Greytext">
+                <p className="d-none d-sm-inline-block fs-6 Greytext">
                   Fissa una consulenza telefonica senza vincoli per parlare del
                   mutuo e ricevere consigli e dritte.
                 </p>

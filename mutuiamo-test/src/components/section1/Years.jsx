@@ -9,8 +9,8 @@ const Years = () => {
     setChecker(param);
   };
   return (
-    <Row className="">
-        <p className="fs-5 mb-3">Durata (anni)</p>
+    <Row>
+        <p className="text-center text-xxl-start fs-5 mb-3">Durata (anni)</p>
       <Col className="mb-3 d-flex">
         <YearButton
           type={"5"}

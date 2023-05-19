@@ -26,10 +26,6 @@
   font-weight: 600;
 }
 
-.outlineButtonBlack:hover {
-  
-}
-
 .circleButton {
   border-radius: 50%;
   background-color: $grey3;
@@ -47,4 +43,10 @@
 .circleButton:active {
   background-color: $grey0;
   color: white;
+}
+
+@media (max-width: 500px) {
+  .outlineButtonBlack{
+    font-size: 0.8rem;
+  }
 }

@@ -64,6 +64,10 @@ body {
   border-radius: 15px;
 }
 
+.section2CardTitle {
+  font-size: 1.5rem;
+}
+
 .section2Text {
   color: $grey0;
   line-height: 2rem;
@@ -100,6 +104,93 @@ body {
   font-weight: 700;
   font-size: 1.7rem;
   letter-spacing: -2px;
+}
+
+@media screen and (max-width: 1600px) {
+  .creditCard {
+    width: 300px;
+  }
+
+  .creditCard1 {
+    width: 300px;
+  }
+
+  .creditCardTitle {
+    font-size: 1.4rem;
+  }
+
+  .section2Title {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .creditCard {
+    width: 200px;
+  }
+
+  .creditCard1 {
+    width: 200px;
+  }
+  
+  .creditCardTitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .creditCard {
+    width: 180px;
+    height: 100px;
+  }
+
+  .creditCard1 {
+    width: 180px;
+  }
+
+  .section2Title {
+    font-size:1.3rem;
+    padding: 0;
+  }
+
+  .section2CardTitle {
+    font-size: 1.2rem;
+  }
+
+  .section2Text {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .creditCard {
+    width: 150px;
+  }
+
+  .creditCard1 {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .creditCard {
+    width: 130px;
+  }
+
+  .creditCard1 {
+    width: 130px;
+  }
+
+  .section2Title {
+    font-size:1.1rem;
+    padding: 0;
+  }
+  .section2CardTitle {
+    font-size: 1rem;
+  }
+  .section2Text {
+    font-size: 0.9rem;
+  }
 }
 
 .cardLogo1 {
@@ -154,9 +245,18 @@ body {
   color: $greenSuccess;
 }
 
+.tickBoxChecked1 {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: $bgWhite;
+  border: 3px solid $greenSuccess;
+  color: $greenSuccess;
+}
+
 .tickBoxNotChecked {
   border-radius: 50%;
-  width: 55px;
+  width: 80px;
   height: 40px;
   background-color: $bgWhite;
   border: 3px solid $grey2;
@@ -164,7 +264,7 @@ body {
 
 .tickBoxNotChecked1 {
   border-radius: 50%;
-  width: 65px;
+  width: 90px;
   height: 40px;
   background-color: $bgWhite;
   border: 3px solid $grey2;
@@ -185,4 +285,133 @@ body {
   color:white;
   height: 80px;
   font-size: 1.2rem;
+}
+
+.footerLink:hover {
+  color:$grey1;
+}
+
+@media screen and (max-width: 1600px) {
+
+  .section3Title {
+    padding: 0;
+  }
+
+  .tickBoxNotChecked {
+    width: 100px;
+    height: 40px;
+  }
+
+  .tickBoxNotChecked1 {
+    width: 140px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+
+  .tickBoxNotChecked {
+    width: 130px;
+    height: 40px;
+  }
+
+  .tickBoxNotChecked1 {
+    width: 160px;
+    height: 40px;
+  }
+
+  .tickBoxChecked{
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .tickBoxNotChecked {
+    width: 180px;
+    height: 40px;
+  }
+
+  .tickBoxNotChecked1 {
+    width: 200px;
+    height: 40px;
+  }
+  
+  .tickBoxChecked{
+    width: 70px;
+  }
+
+  .tickBoxChecked1{
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .tickBoxNotChecked {
+    width: 40px;
+  }
+
+  .tickBoxNotChecked1 {
+    width: 40px;
+  }
+  
+  .tickBoxChecked{
+    width: 45px;
+  }
+
+  .tickBoxChecked1{
+    width: 40px;
+  }
+
+  .footer {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .footer {
+    font-size: 0.8rem;
+  }
+  
+  .tickBoxChecked{
+    width: 70px;
+  }
+
+  .tickBoxChecked1{
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .section3Title {
+    padding: 0;
+    font-size: 1.4rem;
+  }
+
+  .tickBoxText {
+    font-size: 1.2rem;
+  }
+
+  .tickBoxChecked{
+    width: 50px;
+  }
+
+  .tickBoxChecked1{
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .section3Title {
+    padding: 0;
+    font-size: 1.2rem;
+  }
+
+  .tickBoxText {
+    font-size: 1.1rem;
+  }
 }

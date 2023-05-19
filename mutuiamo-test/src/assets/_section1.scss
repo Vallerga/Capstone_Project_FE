@@ -138,10 +138,15 @@
   background-color: $grey3;
   border-radius: 8px;
 }
-
+.rateButtonFont {
+  font-size: 1.2rem;
+}
 @media screen and (max-width: 1600px) {
   .fixVariable {
     width: 300px;
+  }
+  .rateButtonFont{
+    font-size: 1rem;
   }
 }
 
@@ -149,11 +154,17 @@
   .fixVariable {
     width: 200px;
   }
+  .rateButtonFont{
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (min-width:1000px) and (max-width: 1200px) {
   .fixVariable {
     width: 150px;    
+  }
+  .rateButtonFont{
+    font-size: 0.9rem;
   }
 }
 
@@ -161,10 +172,16 @@
   .fixVariable {
     width: 300px;
   }
+  .rateButtonFont{
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width:300px) and (max-width: 770px) {
   .fixVariable {
     width: 150px;
+  }
+  .rateButtonFont{
+    font-size: 0.9rem;
   }
 }

@@ -45,8 +45,8 @@ function Amount() {
     <>
       <div className="text-center mb-4">
         <span className="bigFont fw-bold">{Math.floor(importoMensile)},</span>
-        <span className="fs-3 fw-bold">{decimale}</span>
-        <span className="fs-5 ms-1 Greytext">€/mese</span>
+        <span className="middleFont">{decimale}</span>
+        <span className="smallFont ms-1 Greytext">€/mese</span>
       </div>
       <InvisibleForm /* onMensileChange={gestoreMensile} // props function */ />
     </>

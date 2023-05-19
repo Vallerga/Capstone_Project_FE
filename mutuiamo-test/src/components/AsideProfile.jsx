@@ -42,7 +42,7 @@ const AsideProfile = () => {
           </div>
           <div>
             <p>scarica su</p>
-            <p className="bigText">App Store</p>
+            <p className="bigText d-none d-md-inline-block">App Store</p>
           </div>
         </div>
         <div className="GoogleLogo d-flex align-items-center">
@@ -55,7 +55,7 @@ const AsideProfile = () => {
           </div>
           <div>
             <p>DISPONIBILE SU</p>
-            <p className="bigText">Google Play</p>
+            <p className="bigText d-none d-md-inline-block">Google Play</p>
           </div>
         </div>
       </div>

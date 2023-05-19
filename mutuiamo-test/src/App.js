@@ -4,10 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./assets/App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import Home from "./components/Home";
-import NavCustom from "./components/NavCustom";
-import FooterCustom from "./components/FooterCustom";
-import AsideProfile from "./components/AsideProfile";
+import Home from "./Components/Home";
+import NavCustom from "./Components/NavCustom";
+import FooterCustom from "./Components/FooterCustom";
+import AsideProfile from "./Components/AsideProfile";
 
 function App() {
   return (

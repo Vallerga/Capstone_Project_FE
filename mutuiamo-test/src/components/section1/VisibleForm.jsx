@@ -32,9 +32,9 @@ const VisibleForm = ({ tasso, TAEG }) => {
       <Row className="fs-6">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div>
-            Miglior Tasso <AiFillInfoCircle className="infoIcon fs-4 ms-2" />
+            Miglior Tasso <AiFillInfoCircle className="infoIcon fs-4 ms-2 d-none d-md-inline-block" />
           </div>
-          <div className="fs-5 me-5">
+          <div className="middleFont me-5">
             <strong>
               <span>{Math.floor(rateStore)},</span> {/* use tasso props if you want to use props */}
               {decimaletasso}%
@@ -43,16 +43,16 @@ const VisibleForm = ({ tasso, TAEG }) => {
         </div>
         <div className="d-flex justify-content-between align-items-center mb-3">
           <div>
-            TAEG <AiFillInfoCircle className="infoIcon fs-4 ms-2" />
+            TAEG <AiFillInfoCircle className="infoIcon fs-4 ms-2 d-none d-md-inline-block" />
           </div>
-          <div className="me-5">
+          <div className="smallFont me-5">
             <span>{Math.floor(TAEG)},</span> {/* use TAEG props if you want to use props */}
             {decimaleTAEG}%
           </div>
         </div>
         <div className="align-self-start mb-3">
           Sostenibilità della rata
-          <AiFillInfoCircle className="infoIcon fs-4 ms-2" />
+          <AiFillInfoCircle className="infoIcon fs-4 ms-2 d-none d-md-inline-block" />
         </div>
       </Row>    
   );

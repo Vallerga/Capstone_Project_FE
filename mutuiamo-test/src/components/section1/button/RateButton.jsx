@@ -32,7 +32,7 @@ const RatingButton = ({ ButtonType, setting, selected, handleButtonClick }) => {
       }}
       className={cssClass}
     >
-      <span>{ButtonType}</span>
+      <span className="rateButtonFont">{ButtonType}</span>
     </div>
   );
 };
