@@ -9,7 +9,7 @@ const SustainabilityButton = ({
   handleButtonClick,
 }) => {
   let cssClass = setting;
-  const sustainability = useSelector((state) => state.LoanRequest.sustainability);
+  const sustainability = useSelector((state) => state.estimation.LoanRequest.sustainability);
   const dispatch = useDispatch();
   let WhoIsSelected = sustainability;
 

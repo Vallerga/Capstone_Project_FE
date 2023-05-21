@@ -13,15 +13,15 @@ import AsideProfile from "./AsideProfile";
 const EstimationPage = () => {
   // METHOD SECTION 1
   // SELECTOR FOR ALL THE PROPERTY STORED WITH REDUX
-  /* const actualLoanRequest = useSelector((state) => state.LoanRequest.actualLoanRequest);
-  const actualTotalImport = useSelector((state) => state.LoanRequest.actualTotalImport);
-  const rateFixOrVar = useSelector((state) => state.LoanRequest.rateFixOrVar);
-  const rate = useSelector((state) => state.LoanRequest.rate);
-  const TAEG = useSelector((state) => state.LoanRequest.TAEG);
-  const year = useSelector((state) => state.LoanRequest.year);
-  const sustainability = useSelector((state) => state.LoanRequest.sustainability);
-  const monthlyRate = useSelector((state) => state.LoanRequest.monthlyRate); */
-  const LoanRequest = useSelector((state) => state.LoanRequest);
+  /* const actualLoanRequest = useSelector((state) => state.estimation.LoanRequest.actualLoanRequest);
+  const actualTotalImport = useSelector((state) => state.estimation.LoanRequest.actualTotalImport);
+  const rateFixOrVar = useSelector((state) => state.estimation.LoanRequest.rateFixOrVar);
+  const rate = useSelector((state) => state.estimation.LoanRequest.rate);
+  const TAEG = useSelector((state) => state.estimation.LoanRequest.TAEG);
+  const year = useSelector((state) => state.estimation.LoanRequest.year);
+  const sustainability = useSelector((state) => state.estimation.LoanRequest.sustainability);
+  const monthlyRate = useSelector((state) => state.estimation.LoanRequest.monthlyRate); */
+  const LoanRequest = useSelector((state) => state.estimation.LoanRequest);
   console.log("LoanRequest from home is:", LoanRequest);
 
   // METHOD USING LIFTING STATE UP (you need to active the props in the child button)

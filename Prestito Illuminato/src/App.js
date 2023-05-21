@@ -8,6 +8,9 @@ import EstimationPage from "./Components/EstimationPage";
 import NavCustom from "./Components/NavCustom";
 import FooterCustom from "./Components/FooterCustom";
 import Home from "./Components/Home";
+import Questionary from "./Components/questionary/Questionary";
+import Login from "./Components/Login";
+import ErrorPage from "./Components/ErrorPage";
 
 function App() {
   return (
@@ -16,8 +19,11 @@ function App() {
         <NavCustom />
         <Container className="mainContainer">          
               <Routes>
-                <Route path="/" element={<Home />} />  
-                <Route path="/EstimationPage/" element={<EstimationPage />} />
+                <Route path="/Authorize/Home" element={<Home />} />
+                <Route path="/" element={<Login />}/>
+                <Route path="/Authorize/Questionary/" element={<Questionary />}/>
+                <Route path="/Authorize/EstimationPage/" element={<EstimationPage />} />
+                <Route path="/*" element={<ErrorPage />} />
               </Routes>
         </Container>
         <FooterCustom />

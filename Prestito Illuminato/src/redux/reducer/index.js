@@ -21,7 +21,7 @@ const initialState = {
   }
 };
 
-const mainReducer = (state = initialState, action) => {
+const estimationReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_ACTUAL_LOAN_REQUEST:
       return {
@@ -92,4 +92,4 @@ const mainReducer = (state = initialState, action) => {
   }
 };
 
-export default mainReducer;
+export default estimationReducer;

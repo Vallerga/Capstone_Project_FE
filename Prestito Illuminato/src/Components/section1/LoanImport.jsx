@@ -3,7 +3,7 @@ import CircleButton from ".//button/CircleButton";
 import { useSelector } from "react-redux";
 
 const LoanImport = ({ loan, total, onClickHandler }) => {
-  const actualLoanRequest = useSelector((state) => state.LoanRequest.actualLoanRequest);
+  const actualLoanRequest = useSelector((state) => state.estimation.LoanRequest.actualLoanRequest);
   return (
     <Row className="text-center text-xxl-start py-3">
       <Col xs={12}>

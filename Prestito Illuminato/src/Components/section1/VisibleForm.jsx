@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 const VisibleForm = ({ tasso, TAEG }) => {
   const [decimaletasso, setDecimaleTasso] = useState("");
   const [decimaleTAEG, setDecimaleTAEG] = useState("");
-  const rateStore = useSelector((state) => state.LoanRequest.rate);
-  const TAEGStore = useSelector((state) => state.LoanRequest.TAEG);
+  const rateStore = useSelector((state) => state.estimation.LoanRequest.rate);
+  const TAEGStore = useSelector((state) => state.estimation.LoanRequest.TAEG);
 
   const gestoreTasso = (value) => {
     setDecimaleTasso(() => {

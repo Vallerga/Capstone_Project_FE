@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import { CgChart } from "react-icons/cg";
 import { FaCoins, FaHandHoldingWater } from "react-icons/fa";
 

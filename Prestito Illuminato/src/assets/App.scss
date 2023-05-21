@@ -37,6 +37,10 @@ body {
   box-shadow: 0 0 2px 1px $grey2;
 }
 
+.errorPage {
+  height:72.4vh;
+}
+
 @media screen and (min-width: 1600px) {
   .mainContainer {
     padding: 0 0;
@@ -61,7 +65,7 @@ body {
   }
 }
 
-// Section 2
+// Section 2 EstimationPage
 .section2Title {
   padding: 0 100px;
 }
@@ -84,8 +88,8 @@ body {
 
 .gradientDiv {
   color: black;
-    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
-    from(rgba(0,0,0,1)) , to(rgba(0,0,0,0)));
+  mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
 .creditCard {
@@ -220,7 +224,7 @@ body {
   line-height: 1.5rem;
 }
 
-// section 3
+// section 3 EstimationPage
 
 .section3 {
   padding: 25px 16% 0;

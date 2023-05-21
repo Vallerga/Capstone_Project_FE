@@ -9,8 +9,8 @@ const YearButton = ({ type, setting, checker, yearSelector }) => {
   // let cssClass = setting;
   const [cssClass, setCssClass] = useState(setting);
   const dispatch = useDispatch();
-  const year = useSelector((state) => state.LoanRequest.year);
-  let sustainability = useSelector((state) => state.LoanRequest.sustainability);
+  const year = useSelector((state) => state.estimation.LoanRequest.year);
+  // let sustainability = useSelector((state) => state.estimation.LoanRequest.sustainability);
   let WhoIsSelected = year;
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setRateFixOrVarAction } from "../../../redux/actions";
 
@@ -7,7 +7,7 @@ const RatingButton = ({ ButtonType, setting, selected, handleButtonClick }) => {
   const dispatch = useDispatch();
 
   // using Redux
-  const rateFixOrVar = useSelector((state) => state.LoanRequest.rateFixOrVar);
+  const rateFixOrVar = useSelector((state) => state.estimation.LoanRequest.rateFixOrVar);
   if (rateFixOrVar === ButtonType) {
     // console.log("rateFixOrVar: ", rateFixOrVar);
     // console.log("rate: ", ButtonType);

@@ -16,11 +16,11 @@ function Amount() {
     });
   };
   const dispatch = useDispatch();
-  let TAEGStore = useSelector((state) => state.LoanRequest.TAEG)
-  let yearStore = useSelector((state) => state.LoanRequest.year)
-  let monthlyRateStore = useSelector((state) => state.LoanRequest.monthlyRate)
-  let actualLoanRequestStore = useSelector((state) => state.LoanRequest.actualLoanRequest)
-  let checkStore = useSelector((state) => state.LoanRequest)
+  let TAEGStore = useSelector((state) => state.estimation.LoanRequest.TAEG)
+  let yearStore = useSelector((state) => state.estimation.LoanRequest.year)
+  let monthlyRateStore = useSelector((state) => state.estimation.LoanRequest.monthlyRate)
+  let actualLoanRequestStore = useSelector((state) => state.estimation.LoanRequest.actualLoanRequest)
+  let checkStore = useSelector((state) => state.estimation.LoanRequest)
   console.log("THIS IS THE STORE: ", checkStore)
 
   // 
@@ -39,6 +39,7 @@ function Amount() {
 
   useEffect(() => {
     mounthlyAmountFromStore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[TAEGStore, yearStore, monthlyRateStore, actualLoanRequestStore]);
 
   return (

@@ -15,11 +15,11 @@ const CircleButton = ({
   // method using REDUX
   const dispatch = useDispatch();
   let actualLoanRequest = useSelector(
-    (state) => state.LoanRequest.actualLoanRequest
+    (state) => state.estimation.LoanRequest.actualLoanRequest
   );
 
   let actualTotalImport = useSelector(
-    (state) => state.LoanRequest.actualTotalImport
+    (state) => state.estimation.LoanRequest.actualTotalImport
   );
 
   const reduxImportSetter = () => {
