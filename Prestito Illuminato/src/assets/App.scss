@@ -16,6 +16,9 @@
 // Section1
 @import "section1";
 
+// HomePage
+@import "home";
+
 body {
   background: $bgGrey;
 }
@@ -27,6 +30,11 @@ body {
 
 .mainContainer {
   padding: 0 10%;
+}
+
+.section {
+  background: $bgWhite;
+  box-shadow: 0 0 2px 1px $grey2;
 }
 
 @media screen and (min-width: 1600px) {

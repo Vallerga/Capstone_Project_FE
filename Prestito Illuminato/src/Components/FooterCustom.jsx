@@ -6,7 +6,7 @@ const FooterCustom = () => {
       <p className="ps-4 d-flex flex-column flex-md-row footer align-items-center">
         <BiCopyright />
         <span>
-          &nbsp; Copyright 2023 &nbsp; Mutuiamo.it &nbsp; IT14068211003
+          &nbsp; Copyright 2023 &nbsp; Prestitoilluminato.it &nbsp; IT14068211003
         </span>
         <span>
           <strong>            

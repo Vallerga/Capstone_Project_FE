@@ -40,6 +40,22 @@ hr {
   color: grey;
 }
 
+.logoColorDark {
+  color: #210070 !important;
+}
+
+.logoBgDark {
+  background-color: #210070;
+}
+
+.LogoColorBright {
+  color: #7AD9C4;
+}
+
+.LogoBgBright {
+  background-color: #7AD9C4;
+}
+
 .normalDarkText {
   color: black;
   font-size: 1.1rem;
@@ -49,10 +65,82 @@ hr {
   font-size: 3.5rem;
 }
 
+.middleFont {
+  font-size: 1.7rem;
+}
+
+.smallFont {
+  font-size: 1.3rem;
+}
+
 .infoIcon {
   color: rgb(220, 220, 220);
 }
 
+.greenText {
+  color: #1bbb89;
+  font-weight: 600;
+}
+
+.credit {
+  margin-bottom: 200px;
+}
+
+@media screen and (max-width: 1600px) {
+  .bigFont {
+    font-size: 3rem;
+  }
+  .middleFont {
+    font-size: 1.5rem;
+  }
+  .smallFont {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .bigFont {
+    font-size: 2.5rem;
+  }
+  .middleFont {
+    font-size: 1.3rem;
+  }
+  .smallFont {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .bigFont {
+    font-size: 2.2rem;
+  }
+  .middleFont {
+    font-size: 1.2rem;
+  }
+  .smallFont {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 1000px) {
+  .bigFont {
+    font-size: 3rem;
+  }
+  .middleFont {
+    font-size: 1.5rem;
+  }
+  .smallFont {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 770px) {
+  .bigFont {
+    font-size: 2.2rem;
+  }
+  .middleFont {
+    font-size: 1.2rem;
+  }
+  .smallFont {
+    font-size: 0.9rem;
+  }
+}
 .redButton {
   border-radius: 10px !important;
   padding: 20px 0px !important;
@@ -62,13 +150,23 @@ hr {
 
 .redButton2 {
   border-radius: 10px !important;
-  padding: 20px 20% !important;
+  padding: 20px 22% !important;
   background-color: #ed3b44;
   margin: 35px 0 20px;
 }
 
 .redButton:hover {
   background-color: #f76970 !important;
+}
+
+.outlineButtonBlack {
+  border-radius: 10px !important;
+  padding: 20px 15% !important;
+  background-color: white;
+  margin: 35px 0 10px;
+  border: 1px solid black;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .circleButton {
@@ -90,10 +188,23 @@ hr {
   color: white;
 }
 
+@media (max-width: 500px) {
+  .outlineButtonBlack {
+    font-size: 0.8rem;
+  }
+}
 .navBar {
   position: relative;
   box-shadow: 0 3px 2px -2px rgb(220, 220, 220);
   background: white;
+}
+
+.logo3 {
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .phoneNum {
@@ -330,27 +441,50 @@ hr {
   border-radius: 8px;
 }
 
-.section2Title {
-  padding: 0 100px;
-}
-
-.section2Card {
-  padding: 0 50px;
-  background-color: #f7f8fa;
-  border-radius: 15px;
-}
-
-.section2Text {
-  color: grey;
-  line-height: 2rem;
+.rateButtonFont {
   font-size: 1.2rem;
 }
 
-.creditCard {
-  background-color: white;
-  box-shadow: 1;
+@media screen and (max-width: 1600px) {
+  .fixVariable {
+    width: 300px;
+  }
+  .rateButtonFont {
+    font-size: 1rem;
+  }
 }
-
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .fixVariable {
+    width: 200px;
+  }
+  .rateButtonFont {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .fixVariable {
+    width: 150px;
+  }
+  .rateButtonFont {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 1000px) {
+  .fixVariable {
+    width: 300px;
+  }
+  .rateButtonFont {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 770px) {
+  .fixVariable {
+    width: 150px;
+  }
+  .rateButtonFont {
+    font-size: 0.9rem;
+  }
+}
 body {
   background: #f7f8fa;
 }
@@ -382,5 +516,316 @@ body {
 @media screen and (max-width: 650px) {
   .mainContainer {
     padding: 0 10%;
+  }
+}
+.section2Title {
+  padding: 0 100px;
+}
+
+.section2Card {
+  padding: 0 50px;
+  background-color: #f7f8fa;
+  border-radius: 15px;
+}
+
+.section2CardTitle {
+  font-size: 1.5rem;
+}
+
+.section2Text {
+  color: grey;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.gradientDiv {
+  color: black;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
+}
+
+.creditCard {
+  background-color: white;
+  box-shadow: 1px black;
+  width: 400px;
+  height: 220px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 2px 2px rgb(220, 220, 220);
+}
+
+.creditCard1 {
+  background-color: white;
+  box-shadow: 1px black;
+  width: 400px;
+  height: 80px;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 0px 0px 2px 2px rgb(220, 220, 220);
+}
+
+.creditCardTitle {
+  color: #046c53;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: -2px;
+}
+
+@media screen and (max-width: 1600px) {
+  .creditCard {
+    width: 300px;
+  }
+  .creditCard1 {
+    width: 300px;
+  }
+  .creditCardTitle {
+    font-size: 1.4rem;
+  }
+  .section2Title {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .creditCard {
+    width: 200px;
+  }
+  .creditCard1 {
+    width: 200px;
+  }
+  .creditCardTitle {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .creditCard {
+    width: 180px;
+    height: 100px;
+  }
+  .creditCard1 {
+    width: 180px;
+  }
+  .section2Title {
+    font-size: 1.3rem;
+    padding: 0;
+  }
+  .section2CardTitle {
+    font-size: 1.2rem;
+  }
+  .section2Text {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .creditCard {
+    width: 150px;
+  }
+  .creditCard1 {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .creditCard {
+    width: 130px;
+  }
+  .creditCard1 {
+    width: 130px;
+  }
+  .section2Title {
+    font-size: 1.1rem;
+    padding: 0;
+  }
+  .section2CardTitle {
+    font-size: 1rem;
+  }
+  .section2Text {
+    font-size: 0.9rem;
+  }
+}
+.cardLogo1 {
+  width: 60px;
+}
+
+.cardLogo2 {
+  width: 60px;
+}
+
+.cardLogo3 {
+  width: 35px;
+  margin-right: 5px;
+  border: 1px solid #046c53;
+}
+
+.blur {
+  filter: blur(5px);
+  line-height: 1.5rem;
+}
+
+.section3 {
+  padding: 25px 16% 0;
+}
+
+.section3Title {
+  padding: 20px 100px;
+}
+
+.smallBarCheck {
+  border: 2.5px solid #1bbb89;
+  width: 110px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.smallBar {
+  border: 2.5px solid rgb(220, 220, 220);
+  width: 110px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.tickBoxChecked {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 3px solid #1bbb89;
+  color: #1bbb89;
+}
+
+.tickBoxChecked1 {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 3px solid #1bbb89;
+  color: #1bbb89;
+}
+
+.tickBoxNotChecked {
+  border-radius: 50%;
+  width: 80px;
+  height: 40px;
+  background-color: white;
+  border: 3px solid rgb(220, 220, 220);
+}
+
+.tickBoxNotChecked1 {
+  border-radius: 50%;
+  width: 90px;
+  height: 40px;
+  background-color: white;
+  border: 3px solid rgb(220, 220, 220);
+}
+
+.tickBoxText {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.hrSection3 {
+  border: 1px solid grey;
+  margin: 30px 0;
+}
+
+.footer {
+  background: black;
+  color: white;
+  height: 80px;
+  font-size: 1.2rem;
+}
+
+.footerLink:hover {
+  color: rgb(180, 180, 180);
+}
+
+@media screen and (max-width: 1600px) {
+  .section3Title {
+    padding: 0;
+  }
+  .tickBoxNotChecked {
+    width: 100px;
+    height: 40px;
+  }
+  .tickBoxNotChecked1 {
+    width: 140px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .tickBoxNotChecked {
+    width: 130px;
+    height: 40px;
+  }
+  .tickBoxNotChecked1 {
+    width: 160px;
+    height: 40px;
+  }
+  .tickBoxChecked {
+    width: 50px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .tickBoxNotChecked {
+    width: 180px;
+    height: 40px;
+  }
+  .tickBoxNotChecked1 {
+    width: 200px;
+    height: 40px;
+  }
+  .tickBoxChecked {
+    width: 70px;
+  }
+  .tickBoxChecked1 {
+    width: 60px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .tickBoxNotChecked {
+    width: 40px;
+  }
+  .tickBoxNotChecked1 {
+    width: 40px;
+  }
+  .tickBoxChecked {
+    width: 45px;
+  }
+  .tickBoxChecked1 {
+    width: 40px;
+  }
+  .footer {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .footer {
+    font-size: 0.8rem;
+  }
+  .tickBoxChecked {
+    width: 70px;
+  }
+  .tickBoxChecked1 {
+    width: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section3Title {
+    padding: 0;
+    font-size: 1.4rem;
+  }
+  .tickBoxText {
+    font-size: 1.2rem;
+  }
+  .tickBoxChecked {
+    width: 40px;
+  }
+  .tickBoxChecked1 {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .section3Title {
+    padding: 0;
+    font-size: 1.2rem;
+  }
+  .tickBoxText {
+    font-size: 1.1rem;
   }
 }/*# sourceMappingURL=App.css.map */

@@ -25,6 +25,12 @@ h2 {
   padding: 25px 5%;
 }
 
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $LogoColorDark;
+}
+
 p {
     padding: 0;
     margin: 0;
@@ -43,6 +49,22 @@ hr {
 
 .Greytext {
   color: $grey0;
+}
+
+.logoColorDark {
+  color: $LogoColorDark!important;
+}
+
+.logoBgDark {
+  background-color: $LogoColorDark!important;
+}
+
+.logoColorBright {
+  color: $LogoColorBright!important;
+}
+
+.logoBgBright {
+  background-color: $LogoColorBright!important;
 }
 
 .normalDarkText {

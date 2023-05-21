@@ -13,13 +13,13 @@ const RateBar = () => {
         <div className="fixVariable my-3 d-flex justify-content-between align-items-center">
             <RateButton                
                 ButtonType={"Fisso"}
-                setting={"rateButton text-center "}
+                setting={"brandButton2 text-center "}
                 selected={checker === "Fisso"}
                 handleButtonClick={handleButtonClick}
             />
             <RateButton                
                 ButtonType={"Variabile"}
-                setting={"rateButton text-center "}
+                setting={"brandButton2 text-center "}
                 selected={checker === "Variabile"}
                 handleButtonClick={handleButtonClick}
             />

@@ -1,8 +1,3 @@
-.section {
-  background: $bgWhite;
-  box-shadow: 0 0 2px 1px $grey2;
-}
-
 // rate bar
 .fixVariable {
   background-color: $grey2;
@@ -25,10 +20,29 @@
   color: white;
 }
 
+.brandButton2 {
+  background-color: transparent;
+  color: black;
+  border-radius: 15px;
+  padding: 15px 0px;
+  width: 200px;
+}
+
+.brandButton2:hover {
+  background-color: $LogoColorDark2;
+  color: $LogoColorBright2;
+}
+
+
 .selectedRate {
+  background-color: $LogoColorDark;
+  color: $LogoColorBright;
+}
+
+/* .selectedRate {
   background-color: $redDanger;
   color: white;
-}
+} */
 
 // sustainability bar
 .sustainabilityBar {
@@ -125,13 +139,13 @@
 }
 
 .duration:hover {
-  background-color: $VeryLightRedDanger;
-  color: white;
+  background-color: $LogoColorDark2;
+  color: $LogoColorBright2;
 }
 
 .yearSelected {
-  background-color: $redDanger;
-  color: white;
+  background-color: $LogoColorDark;
+  color: $LogoColorBright;
 }
 
 .percentBox {

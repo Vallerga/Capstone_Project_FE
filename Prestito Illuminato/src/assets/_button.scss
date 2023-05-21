@@ -5,6 +5,10 @@
   margin: 35px;
 }
 
+.redButton:hover {
+  background-color: $lightRedDanger !important;
+}
+
 .redButton2 {
   border-radius: 10px !important;
   padding: 20px 22% !important;
@@ -12,8 +16,58 @@
   margin: 35px 0 20px;
 }
 
-.redButton:hover {
-  background-color: $lightRedDanger !important;
+//with color of the logo
+.brandButton1 {
+  border-radius: 10px !important;
+  padding: 20px 0px !important;
+  background-color: $LogoColorDark!important;
+  margin: 35px;
+  color: $LogoColorBright!important;
+}
+
+.brandButton1:hover {
+  background-color: $LogoColorDark2 !important;
+  color: $LogoColorBright2!important;
+}
+
+.brandButton1:active {
+  background-color: $LogoColorBright !important;
+  color: $LogoColorDark!important;
+}
+
+.brandButton3 {
+  border-radius: 10px !important;
+  padding: 20px 22% !important;
+  background-color: $LogoColorDark!important;
+  color: $LogoColorBright;
+  margin: 35px 0 20px;
+}
+
+.brandButton3:hover {
+  background-color: $LogoColorDark2 !important;
+  color: $LogoColorBright2!important;
+}
+
+.brandButton3:active {
+  background-color: $LogoColorBright !important;
+  color: $LogoColorDark!important;
+}
+
+.brandButton4 {
+  border-radius: 10px !important;
+  padding: 20px 12% !important;
+  background-color: $LogoColorBright!important;
+  margin: 35px 0 20px;
+}
+
+.brandButton4:hover {
+  background-color: $LogoColorBright2 !important;
+  color: $LogoColorDark2!important;
+}
+
+.brandButton4:active {
+  background-color: $LogoColorDark !important;
+  color: $LogoColorBright!important;
 }
 
 .outlineButtonBlack {

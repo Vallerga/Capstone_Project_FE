@@ -1,0 +1,70 @@
+.moneyLogo {
+    width: 200px;
+    padding-bottom: 100px;
+}
+
+.homePageBorder {
+    padding: 0 10%!important;
+}
+
+.homeCard {
+    width: 200px!important;
+    height: 300px;
+    font-size: 0.8rem;
+    text-align: start;
+}
+
+.homeIcon {
+    font-size:4rem;
+}
+
+.squareBox {
+    min-width:300px!important;
+    height:250px;
+    background-color: $bgWhite;
+    z-index: 1;
+    font-size: 0.8rem;
+
+}
+
+.backBox{
+    width:70%;
+    height: 300px;
+    background-color: $LogoColorBright;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: space-between;
+    left: 15%;
+}
+
+.marginTop {
+    margin: 150px;
+}
+
+.reader {
+    font-size: 7rem;
+    margin-right: 30px;
+}
+
+@media (max-width: 1600px) {
+    .homePageBorder{
+      padding: 0!important;
+    }
+    .moneyLogo {
+        width: 150px;
+    }
+
+    .squareBox {
+        min-width: 0;
+        width:250px!important;
+        height:250px;
+        font-size: 0.7rem;
+        .homeIcon {
+            font-size: 3rem;
+        }        
+    }
+    .marginTop {
+        margin: 150px 50px;
+    }
+  }

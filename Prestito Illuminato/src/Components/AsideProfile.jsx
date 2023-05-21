@@ -13,7 +13,8 @@ const AsideProfile = () => {
               alt="profile portrait"
             />
           </div>
-          <h2>Ciao Antonio! Sono Gabriele, il tuo Credit Advisor Mutuiamo</h2>
+          <h2>Ciao Antonio! Sono il tuo Credit Advisor di Prestito illuminato
+          {/* <AiOutlineHeart /> */}</h2>
           <div className="d-flex align-items-center justify-content-center">
             <p className="lightGreytext text-center">
               <span className="star">
@@ -31,7 +32,7 @@ const AsideProfile = () => {
           </p>
         </div>
         <hr className="align-self-stretch" />
-        <Button className="redButton align-self-stretch" variant="danger">
+        <Button className="brandButton1 align-self-stretch" variant="primary">
           MOSTRAMI I MUTUI
         </Button>
       </div>
