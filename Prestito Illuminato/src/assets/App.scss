@@ -10,14 +10,17 @@
 // Navbar section
 @import "navBar";
 
-// AsideProfile
-@import "asideProfile";
-
-// Section1
-@import "section1";
-
 // HomePage
 @import "home";
+
+// Questionary
+@import "questionary";
+
+// AsideProfile Relative EstimationPage
+@import "asideProfile";
+
+// Section1 relative EstimationPage
+@import "section1";
 
 body {
   background: $bgGrey;
@@ -297,6 +300,9 @@ body {
   color:white;
   height: 80px;
   font-size: 1.2rem;
+  position: fixed;
+  bottom:0px;
+  width:100%;
 }
 
 .footerLink:hover {

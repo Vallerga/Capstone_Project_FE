@@ -80,6 +80,25 @@
   font-weight: 600;
 }
 
+.questionButton {
+  width: 300px;
+  border-radius: 10px !important;
+  padding: 20px 0 !important;
+  background-color: $LogoColorDark!important;
+  color: $bgWhite;
+  margin: 35px 10px 20px;
+}
+
+.questionButton:hover {
+  background-color: $LogoColorDark2 !important;
+  color: $LogoColorBright2!important;
+}
+
+.questionButton:active {
+  background-color: $LogoColorBright2 !important;
+  color: $LogoColorDark2!important;
+}
+
 .circleButton {
   border-radius: 50%;
   background-color: $grey3;
