@@ -5,7 +5,7 @@ const Questionary = () => {
     {
       type: "multiple",
       question: "A che punto sei nella ricerca dell'immobile",
-      answer: [
+      answers: [
         "Ho appena iniziato a cercare",
         "Ne ho visitati alcuni",
         "Sto per fare un'offerta",
@@ -16,32 +16,32 @@ const Questionary = () => {
     {
       type: "multiple",
       question: "Fra quanti mesi vuoi comprare casa?",
-      answer: ["0-3 mesi", "3-6 mesi", "6-12 mesi", "oltre 12 mesi"],
+      answers: ["0-3 mesi", "3-6 mesi", "6-12 mesi", "oltre 12 mesi"],
     },
     {
       type: "multiple",
       question: "Da quante persone sarà composto il tuo nucleo famigliare?",
-      answer: ["1", "2", "3", "4", "5", "6"],
+      answers: ["1", "2", "3", "4", "5", "6"],
     },
     {
       type: "multiple",
       question: "quante sono le persone con reddito?",
-      answer: ["0-3 mesi", "3-6 mesi", "6-12 mesi", "oltre 12 mesi"],
+      answers: ["0-3 mesi", "3-6 mesi", "6-12 mesi", "oltre 12 mesi"],
     },
     {
       type: "multiple",
       question: "quante sono le persone con reddito?",
-      answer: ["1", "2", "3", "4", "5", "6"],
+      answers: ["1", "2", "3", "4", "5", "6"],
     },
     {
       type: "multiple",
       question: "In quale comune vuoi comprare casa?",
-      answer: ["Roma", "Milano", "Napoli", "Palermo", "Genova", "altro"],
+      answers: ["Roma", "Milano", "Napoli", "Palermo", "Genova", "altro"],
     },
     {
       type: "module",
       question: "Per ogni intestatario indicare",
-      answer: [
+      answers: [
         "Data di nascita (giorno, mese, anno)",
         "Tipo di reddito (determinato, indeterminato, partita iva, pensionato)",
         "Numero mensilità",
@@ -51,12 +51,12 @@ const Questionary = () => {
     {
       type: "multiple",
       question: "Quanti saranno gli intestatari del mutuo?",
-      answer: ["1", "2", "3", "4", "5", "6"],
+      answers: ["1", "2", "3", "4", "5", "6"],
     },
     {
       type: "multiple",
       question: "Quale finalità avrà il tuo mutuo?",
-      answer: ["Prima Casa", "Seconda Casa", "Surroga"],
+      answers: ["Prima Casa", "Seconda Casa", "Surroga"],
     },
   ];
   /* let questionCounter = 0;
@@ -67,34 +67,17 @@ const Questionary = () => {
         <Col>
           <h1 className="title-questionary">QUESTIONARIO</h1>
           {questionArray &&
-            questionArray.map((schedule) => {
-                let index = 0;
+            questionArray.map((schedule) => {              
               return (
                 <>
                   <h2>{schedule.question}</h2>
-                  <Button className="questionButton mt-4" variant="primary">
-                    {schedule.answer[index]}
-                  </Button>
-                    
-                  <Button className="questionButton mt-4" variant="primary">
-                    {schedule.answer[index + 1]}
-                  </Button>
-                    
-                  <Button className="questionButton mt-4" variant="primary">
-                    {schedule.answer[index + 2]}
-                  </Button>
-                    
-                  <Button className="questionButton mt-4" variant="primary">
-                    {schedule.answer[index + 3]}
-                  </Button>
-                    
-                  <Button className="questionButton mt-4" variant="primary">
-                    {schedule.answer[index + 4]}
-                  </Button>
-                    
-                  <Button className="questionButton mt-4" variant="primary">
-                    {schedule.answer[index + 5]}
-                  </Button>
+                  {schedule.answers.map((answer) => {
+                    return (
+                      <Button className="questionButton mt-4" variant="primary">
+                        {answer}
+                      </Button>
+                    );
+                  })}
                 </>
               );
             })}
