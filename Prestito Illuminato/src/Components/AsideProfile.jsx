@@ -1,4 +1,4 @@
-import { AiFillStar, AiFillApple } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 import { Button } from "react-bootstrap";
 
 const AsideProfile = () => {
@@ -36,29 +36,7 @@ const AsideProfile = () => {
           MOSTRAMI I MUTUI
         </Button>
       </div>
-      <div className="d-flex justify-content-center mt-4 mb-4">
-        <div className="appleLogo d-flex align-items-center me-3">
-          <div className="appleIcon">
-            <AiFillApple />
-          </div>
-          <div>
-            <p>scarica su</p>
-            <p className="bigText d-none d-md-inline-block">App Store</p>
-          </div>
-        </div>
-        <div className="GoogleLogo d-flex align-items-center">
-          <div className="">
-            <img
-              className="googleIcon"
-              src="https://cdn-icons-png.flaticon.com/512/732/732208.png"
-              alt="google logo"
-            />
-          </div>
-          <div>
-            <p>DISPONIBILE SU</p>
-            <p className="bigText d-none d-md-inline-block">Google Play</p>
-          </div>
-        </div>
+      <div className="d-flex justify-content-center mt-4 mb-4">             
       </div>
       <div className="d-flex justify-content-center align-items-center trustPilotText">
         Eccezionale 4.7 su 5{" "}

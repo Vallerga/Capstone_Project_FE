@@ -11,6 +11,7 @@ import Home from "./Components/Home";
 import Questionary from "./Components/questionary/Questionary";
 import Login from "./Components/Login";
 import ErrorPage from "./Components/ErrorPage";
+import Register from "./Components/Register";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Routes>
                 <Route path="/Authorize/Home" element={<Home />} />
                 <Route path="/" element={<Login />}/>
+                <Route path="/Register" element={<Register />}/>
                 <Route path="/Authorize/Questionary/" element={<Questionary />}/>
                 <Route path="/Authorize/EstimationPage/" element={<EstimationPage />} />
                 <Route path="/*" element={<ErrorPage />} />
