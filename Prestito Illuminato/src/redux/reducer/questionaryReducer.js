@@ -1,7 +1,8 @@
 const initialState = {
   questionResult: true,
-  adminToken: null,
-  userToken: null,
+  index: 0,
+  questionary: null,
+  
 };
 
 const questionaryReducer = (state = initialState, action) => {
@@ -10,17 +11,17 @@ const questionaryReducer = (state = initialState, action) => {
       return {
         ...state,
         questionResult: action.payload,
-      };
-      case "CHECK_ADMIN_TOKEN_REDUCER":
+      };     
+      case "NEXT_QUESTION_REDUCER":
         return {
           ...state,
-          adminToken: action.payload,
+          index: action.payload,
         };
-        case "CHECK_USER_TOKEN_REDUCER":
+        case "GO_QUESTIONARY":
           return {
             ...state,
-            userToken: action.payload,
-          };
+            questionary: action.payload,
+          }; 
     default:
       return state;
   }

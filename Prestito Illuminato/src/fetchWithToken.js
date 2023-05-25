@@ -11,7 +11,7 @@ const fetchWithToken = async (url, token) => {
 
 const testFetch = async () => {
   const tokenFix =
-    "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0aGVib3NzLlVAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODQ5NTk4OTgsImV4cCI6MTY4NTU2NDY5OH0.QJf49fjOf0TXL5w4KX_4b0VroSdfzbEMc5nQAwVH9IPM9TrSvBlpQtiwTmdBmspT";
+    "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0aGVib3NzLlVAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODUwMjI3MDUsImV4cCI6MTY4NTYyNzUwNX0.d9NiQeMDL8sXabToHE0HzayhEFFc_DhrVSd8vSXqAubwOWDTI4q8iOphIxQi48An";
 
   const urlFix = "http://localhost:8080/api/reports";
 
