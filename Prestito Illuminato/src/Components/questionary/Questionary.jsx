@@ -83,7 +83,7 @@ const Questionary = () => {
     // console.log(`nuova domanda numero: ${index}`);
   };
   if(index >= 9) {
-    return <Navigate to="/Authorize/EstimationPage/" />
+    return <Navigate to="/EstimationPage" />
   }
   /* let questionCounter = 0;
   let questionBuffer; */

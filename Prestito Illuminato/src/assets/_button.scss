@@ -70,6 +70,26 @@
   color: $LogoColorBright!important;
 }
 
+.log_reg_Button {
+  border-radius: 10px !important;
+  padding: 10px 12% !important;
+  background-color: $LogoColorBright!important;
+  margin: 20px 0 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $LogoColorDark;
+}
+
+.log_reg_Button:hover {
+  background-color: $LogoColorBright2 !important;
+  color: $LogoColorDark!important;
+}
+
+.log_reg_Button:active {
+  background-color: $bgWhite !important;
+  color: $LogoColorDark!important;
+}
+
 .outlineButtonBlack {
   border-radius: 10px !important;
   padding: 20px 15% !important;
