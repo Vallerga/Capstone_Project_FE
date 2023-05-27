@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSustainabilityAction, setYearAction } from "../../../redux/actions";
+import { setSustainabilityAction, setYearAction } from "../../../../redux/actions";
 
 const SustainabilityButton = ({
   type,

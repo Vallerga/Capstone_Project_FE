@@ -8,7 +8,8 @@ import TotalImport from "./section1/TotalImport";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { AiOutlineCheck } from "react-icons/ai";
-import AsideProfile from "./AsideProfile";
+import AsideProfile from "./section1/AsideProfile";
+import { Navigate } from "react-router-dom";
 
 const EstimationPage = () => {
   // METHOD SECTION 1
@@ -66,6 +67,17 @@ const EstimationPage = () => {
     // console.log("LoanRequest from home is:", LoanRequest)
   };
 
+  // Go to ReportHistory page
+  const [buttonState, setButtonState] = useState("false");
+
+  const handleHistory = () => {
+    setButtonState("true");
+  };
+
+  if (buttonState === "true") {
+    return<Navigate to="/ReportHistory" />;
+  }
+
   return (
     <>
       {/* SECTION 1 */}
@@ -109,17 +121,14 @@ const EstimationPage = () => {
                 Antonio, ora che hai una stima, vai al dettaglio dei mutui.
               </h2>
               <div className="py-2 section2Card text-center">
-                <h2 className="pt-4 pb-1 section2CardTitle">
-                  Visualizza i mutui nell'app{" "}
-                  <span className="text-danger">(5)</span>
-                </h2>
-                <p className="section2Text">
+                <p className="pt-4 section2Text">
                   Scopri le banche che offrono questi tassi e ottieni supporto
                   gratuito fino all'ottenimento del mutuo.
                 </p>
                 <Button
                   className="brandButton3 align-self-stretch"
                   variant="primary"
+                  onClick={handleHistory}
                 >
                   VISUALIZZA STORICO MUTUI
                 </Button>
@@ -132,7 +141,7 @@ const EstimationPage = () => {
                       INTESA{" "}
                       <img
                         className="cardLogo1 d-none d-xl-inline-block"
-                        src={require("../assets/image/Intesa.png")}
+                        src={require("../../assets/image/Intesa.png")}
                         alt="Intesa Logo"
                       />{" "}
                       &nbsp;SANPAOLO
@@ -156,7 +165,7 @@ const EstimationPage = () => {
                     <h3 className="creditCardTitle fs-5 px-4 pt-0 pt-xl-2 mb-0 d-flex align-items-center justify-content-around">
                       <img
                         className="cardLogo3 d-none d-xl-inline-block"
-                        src={require("../assets/image/credit_agricole.png")}
+                        src={require("../../assets/image/credit_agricole.png")}
                         alt="Intesa Logo"
                       />
                       <strong>CREDIT AGRICOLE</strong>
@@ -184,7 +193,7 @@ const EstimationPage = () => {
                       <h3 className="fs-5 text-center text-xl-start px-4 pt-2 mb-0 d-flex align-items-center justify-content-around">
                         <img
                           className="cardLogo3 d-none d-xl-inline-block"
-                          src={require("../assets/image/BNL.jpg")}
+                          src={require("../../assets/image/BNL.jpg")}
                           alt="Intesa Logo"
                         />
                         <strong>BNL</strong>
@@ -198,6 +207,7 @@ const EstimationPage = () => {
                 <Button
                   className="brandButton3 align-self-stretch"
                   variant="primary"
+                  onClick={handleHistory}
                 >
                   VISUALIZZA STORICO MUTUI
                 </Button>
@@ -212,7 +222,7 @@ const EstimationPage = () => {
                 Come trovare il mutuo perfetto con Prestito illuminato
                 <img
                   className="logo3 py-3 ms-3"
-                  src={require("../assets/image/Prestito illuminato logo.png")}
+                  src={require("../../assets/image/Prestito illuminato logo.png")}
                   alt="a"
                 />
               </h2>

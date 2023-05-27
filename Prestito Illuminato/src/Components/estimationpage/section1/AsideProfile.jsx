@@ -1,7 +1,27 @@
 import { AiFillStar } from "react-icons/ai";
 import { Button } from "react-bootstrap";
+import { Navigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const AsideProfile = () => {
+  const [buttonState, setButtonState] = useState("false");
+  const dispatch = useDispatch();
+  const handleHistory = () => {
+    setButtonState("true");
+    dispatch({
+      type: "NEXT_QUESTION_REDUCER",
+      payload: 0,
+    });
+    dispatch({
+      type: "GO_QUESTIONARY",
+      payload: false,
+    });
+  };
+  if (buttonState === "true") {
+    return <Navigate to="/Home" />;
+  }
+
   return (
     <>
       <div className="rounded-4 section d-flex flex-column align-items-center pt-5 my-4 me-3">
@@ -9,12 +29,13 @@ const AsideProfile = () => {
           <div>
             <img
               className="portrait"
-              src={require("../assets/image/Portrait.jpeg")}
+              src={require("../../../assets/image/Portrait.jpeg")}
               alt="profile portrait"
             />
           </div>
-          <h2>Ciao Antonio! Sono il tuo Credit Advisor di Prestito illuminato
-          {/* <AiOutlineHeart /> */}</h2>
+          <h2>
+            Ciao Antonio! Sono il tuo Credit Advisor di Prestito illuminato
+          </h2>
           <div className="d-flex align-items-center justify-content-center">
             <p className="lightGreytext text-center">
               <span className="star">
@@ -32,12 +53,15 @@ const AsideProfile = () => {
           </p>
         </div>
         <hr className="align-self-stretch" />
-        <Button className="brandButton1 align-self-stretch" variant="primary">
-          MOSTRAMI I MUTUI
+        <Button
+          onClick={handleHistory}
+          className="brandButton1 align-self-stretch"
+          variant="primary"
+        >
+          TORNA ALLA HOMEPAGE
         </Button>
       </div>
-      <div className="d-flex justify-content-center mt-4 mb-4">             
-      </div>
+      <div className="d-flex justify-content-center mt-4 mb-4"></div>
       <div className="d-flex justify-content-center align-items-center trustPilotText">
         Eccezionale 4.7 su 5{" "}
         <span className="greenStar">

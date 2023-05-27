@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import InvisibleForm from "./InvisibleForm";
 import { useDispatch, useSelector } from "react-redux";
-import { setMonthlyRateAction } from "../../redux/actions";
+import { setMonthlyRateAction } from "../../../redux/actions";
 
 function Amount() {
   const [importoMensile, setImportoMensile] = useState(0);

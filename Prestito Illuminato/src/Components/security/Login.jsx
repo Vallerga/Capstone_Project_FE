@@ -1,33 +1,37 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
 const URL = "http://localhost:8080/api/auth/login";
 
-const TOKEN =
+/* const TOKEN_EXAMPLE =
   "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0aGVib3NzLlVAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODUwMzE1MDcsImV4cCI6MTY4NTYzNjMwN30.6ZGIqUIV1yGWiYuv_7LIgTyFqp312YVTLW_syf6DJ6DWX7e1RMNXkIR41Ls-h2oe";
 
-const BODY = {
+const BODY_EXAMPLE = {
   username: "AccountAdmin",
   password: "pOtf8r$4Nb!",
-};
+}; */
 
 const Login = () => {
-  //form section
+  
   const [username, setUsername] = useState("AccountAdmin");
   const [password, setPassword] = useState("pOtf8r$4Nb!");
+
   let dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
+    // prevent refresh
     event.preventDefault();
-
+    // loading body for sign in
     const bodyLogin = { 
       username: username,
       password: password
     };
 
-    console.log(JSON.stringify(bodyLogin, null, 2));
+    console.debug(`bodyLogin used for fetch: ${JSON.stringify(bodyLogin, null, 2)}`);
+
+    // sent sign in credential and receive fresh token
     try {
       const response = await fetch(URL, {
         method: "POST",
@@ -36,10 +40,16 @@ const Login = () => {
         },
         body: JSON.stringify(bodyLogin),
       });
+
+      // print fetch response
       console.debug(`response.ok: ${response.ok}, response.status: ${response.status}`);
+
       if (response.ok) {
         const result = await response.json();
+        // print fetch response body
         console.debug(`result: ${JSON.stringify(result, null, 2)}`);
+
+        // send token to Redux store
         dispatch({
           type: "CHECK_ADMIN_TOKEN_REDUCER",
           payload: `Bearer ${result.accessToken}`,
@@ -52,11 +62,14 @@ const Login = () => {
     }    
   };
 
+  
+  
+  // Token stored in Redux Store
   let adminToken = useSelector((state) => state.security.adminToken);
   console.debug(`adminToken Render: ${adminToken && adminToken.slice(20)}`);
 
   if (adminToken) {
-    return <Navigate to="/ReportHistory" />;
+    return <Navigate to="/Home" />;
   }
 
   return (
@@ -64,7 +77,7 @@ const Login = () => {
       <div className="loginImgComponent d-flex align-items-center justify-content-center">
         <img
           className="loginLogo"
-          src={require("../assets/image/Loan_login.png")}
+          src={require("../../assets/image/Loan_login.png")}
           alt="loginImg"
         />
       </div>
@@ -108,34 +121,5 @@ const Login = () => {
     </div>
   );
 };
-/* onClick={loginHandler} */
+
 export default Login;
-
-{
-  /* <div className="formComponent d-flex flex-column align-items-center align-content-center justify-content-center ">
-        <input
-          className="my-3 p-2"
-          type="text"
-          placeholder="inserisci username"
-        />
-
-        <input
-          className="my-3 p-2"
-          type="password"
-          placeholder="inserisci password"
-        />
-
-        <Button
-          className="log_reg_Button"
-          onClick={() => fetchLogin(URL, TOKEN, BODY)}
-        >
-          Accedi
-        </Button>
-        <p>
-          Non riesci a connetterti?
-          <Link to={"/Register"}>
-            <span className="logIn">Clicca qui</span>
-          </Link>
-        </p>
-      </div> */
-}

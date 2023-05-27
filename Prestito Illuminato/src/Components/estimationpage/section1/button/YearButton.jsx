@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setSustainabilityAction,
   setYearAction,
-} from "../../../redux/actions/index";
+} from "../../../../redux/actions/index";
 import { useEffect, useState } from "react";
 
 const YearButton = ({ type, setting, checker, yearSelector }) => {

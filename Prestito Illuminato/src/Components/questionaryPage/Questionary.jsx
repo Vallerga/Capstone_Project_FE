@@ -73,20 +73,19 @@ const Questionary = () => {
     },
   ];
   let dispatch = useDispatch();
-  let index = useSelector((state) => state.questionary.index)
+  let index = useSelector((state) => state.questionary.index);
   const questionHandler = () => {
     // change question
     dispatch({
       type: "NEXT_QUESTION_REDUCER",
       payload: index + 1,
     });
-    // console.log(`nuova domanda numero: ${index}`);
   };
-  if(index >= 9) {
-    return <Navigate to="/EstimationPage" />
+
+  if (index >= 9) {
+    return <Navigate to="/EstimationPage" />;
   }
-  /* let questionCounter = 0;
-  let questionBuffer; */
+  
   return (
     <Container className="mainRow container-fluid gradientContainer homePageBorder rounded-4 mt-4 mb-5">
       <Row className="d-flex flex-column align-items-center px-5 logoColorDark">
@@ -94,56 +93,22 @@ const Questionary = () => {
           <h1 className="title-questionary">QUESTIONARIO</h1>
 
           <h2>{questionArray[index].question}</h2>
-          {questionArray[index].answers.map((answer,i) => {
-                    return (
-                      <Button onClick={questionHandler} className="questionButton mt-4" variant="primary">
-                        {answer}
-                      </Button>
-                    );
-                  })}
-
-
-          {/* {questionArray &&
-            questionArray.map((schedule) => {
-              return (
-                <div>
-                  <h2>{schedule.question}</h2>
-                  {schedule.answers.map((answer,i) => {
-                    return (
-                      <Button onClick={questionHandler} className="questionButton mt-4" variant="primary">
-                        {answer}
-                      </Button>
-                    );
-                  })}
-                </div>
-              );
-            })} */}
-
-          <div className="py-5">Domanda numero {index+1}</div>
+          {questionArray[index].answers.map((answer, i) => {
+            return (
+              <Button
+                onClick={questionHandler}
+                className="questionButton mt-4"
+                variant="primary"
+              >
+                {answer}
+              </Button>
+            );
+          })}
+          <div className="py-5">Domanda numero {index + 1}</div>
         </Col>
       </Row>
     </Container>
   );
 };
 
-{
-  /* <Button className="questionButton mt-4" variant="primary">
-  Ho già fatto una proposta proposta
-</Button>
-<Button className="questionButton mt-4" variant="primary">
-  risposta 1
-</Button>
-<Button className="questionButton mt-4" variant="primary">
-  risposta 1
-</Button>
-<Button className="questionButton mt-4" variant="primary">
-  risposta 1
-</Button>
-<Button className="questionButton mt-4" variant="primary">
-  risposta 1
-</Button>
-<Button className="questionButton mt-4" variant="primary">
-  risposta 1
-</Button> */
-}
 export default Questionary;

@@ -1,5 +1,5 @@
-import AboutUs from "./homepage/AboutUs";
-import CompareLoan from "./homepage/CompareLoan";
+import AboutUs from "./AboutUs";
+import CompareLoan from "./CompareLoan";
 
 const EstimationPage = () => {
   return (

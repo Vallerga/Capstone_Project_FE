@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setLoanAction, setTotalImportAction } from "../../../redux/actions";
+import { setLoanAction, setTotalImportAction } from "../../../../redux/actions";
 
 const CircleButton = ({
   whatIs,

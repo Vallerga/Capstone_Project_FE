@@ -1,6 +1,6 @@
 // import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setRateFixOrVarAction } from "../../../redux/actions";
+import { setRateFixOrVarAction } from "../../../../redux/actions";
 
 const RatingButton = ({ ButtonType, setting, selected, handleButtonClick }) => {
   let cssClass = setting;

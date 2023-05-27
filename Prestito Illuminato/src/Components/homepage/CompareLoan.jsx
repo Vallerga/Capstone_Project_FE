@@ -7,7 +7,7 @@ import { Navigate } from "react-router-dom";
 const CompareLoan = () => {
 
   let dispatch = useDispatch();
-  let questionary = useSelector((state) => state.questionary.questionary)
+  let questionary = useSelector((state) => state.questionary.questionary);
 
   const startQuestionaryHandler = () => {
     // do the fetch

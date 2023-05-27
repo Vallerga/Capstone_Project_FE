@@ -1,13 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+
 import { Navigate } from "react-router-dom";
 import { Button, Col } from "react-bootstrap";
 
-const URL = "http://localhost:8080/api/auth/signin"; // <--- TODO: da verificare
+// const URL = "http://localhost:8080/api/auth/signin"; // <--- TODO: da verificare
 
 const Register = () => {
-  let dispatch = useDispatch();  
-
-  
   if (null) {
     return <Navigate to="/signup-success" />; // <--- TODO: da fare
   }
@@ -17,7 +14,7 @@ const Register = () => {
       <div className="loginImgComponent d-flex align-items-center justify-content-center">
         <img
           className="loginLogo"
-          src={require("../assets/image/Loan_login.png")}
+          src={require("../../assets/image/Loan_login.png")}
           alt="loginImg"
         />
       </div>

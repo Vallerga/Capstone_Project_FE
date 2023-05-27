@@ -25,6 +25,10 @@
 // Section1 relative EstimationPage
 @import "section1";
 
+.redbanner {
+  background-color: red;
+}
+
 body {
   background: $bgGrey;
 }
@@ -44,7 +48,7 @@ body {
 }
 
 .errorPage {
-  height:72.4vh;
+  height: 72.4vh;
 }
 
 @media screen and (min-width: 1600px) {
@@ -94,8 +98,20 @@ body {
 
 .gradientDiv {
   color: black;
-  mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 1)),
+    to(rgba(0, 0, 0, 0))
+  );
 }
 
 .creditCard {
@@ -150,7 +166,7 @@ body {
   .creditCard1 {
     width: 200px;
   }
-  
+
   .creditCardTitle {
     font-size: 1.2rem;
   }
@@ -167,7 +183,7 @@ body {
   }
 
   .section2Title {
-    font-size:1.3rem;
+    font-size: 1.3rem;
     padding: 0;
   }
 
@@ -200,7 +216,7 @@ body {
   }
 
   .section2Title {
-    font-size:1.1rem;
+    font-size: 1.1rem;
     padding: 0;
   }
   .section2CardTitle {
@@ -244,14 +260,14 @@ body {
   border: 2.5px solid $greenSuccess;
   width: 110px;
   margin-left: 10px;
-  border-radius:10px;
+  border-radius: 10px;
 }
 
 .smallBar {
   border: 2.5px solid $grey2;
   width: 110px;
   margin-left: 10px;
-  border-radius:10px;
+  border-radius: 10px;
 }
 
 .tickBoxChecked {
@@ -300,21 +316,20 @@ body {
 
 .footer {
   z-index: 10;
-  background: black; 
-  color:white;
+  background: black;
+  color: white;
   height: 80px;
   font-size: 1.2rem;
   position: fixed;
-  bottom:0px;
-  width:100%;
+  bottom: 0px;
+  width: 100%;
 }
 
 .footerLink:hover {
-  color:$grey1;
+  color: $grey1;
 }
 
 @media screen and (max-width: 1600px) {
-
   .section3Title {
     padding: 0;
   }
@@ -331,7 +346,6 @@ body {
 }
 
 @media screen and (max-width: 1400px) {
-
   .tickBoxNotChecked {
     width: 130px;
     height: 40px;
@@ -342,13 +356,12 @@ body {
     height: 40px;
   }
 
-  .tickBoxChecked{
+  .tickBoxChecked {
     width: 50px;
   }
 }
 
 @media screen and (max-width: 1200px) {
-
   .tickBoxNotChecked {
     width: 180px;
     height: 40px;
@@ -358,18 +371,17 @@ body {
     width: 200px;
     height: 40px;
   }
-  
-  .tickBoxChecked{
+
+  .tickBoxChecked {
     width: 70px;
   }
 
-  .tickBoxChecked1{
+  .tickBoxChecked1 {
     width: 60px;
   }
 }
 
 @media screen and (max-width: 1000px) {
-
   .tickBoxNotChecked {
     width: 40px;
   }
@@ -377,12 +389,12 @@ body {
   .tickBoxNotChecked1 {
     width: 40px;
   }
-  
-  .tickBoxChecked{
+
+  .tickBoxChecked {
     width: 45px;
   }
 
-  .tickBoxChecked1{
+  .tickBoxChecked1 {
     width: 40px;
   }
 
@@ -392,22 +404,20 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-
   .footer {
     font-size: 0.8rem;
   }
-  
-  .tickBoxChecked{
+
+  .tickBoxChecked {
     width: 70px;
   }
 
-  .tickBoxChecked1{
+  .tickBoxChecked1 {
     width: 60px;
   }
 }
 
 @media screen and (max-width: 600px) {
-
   .section3Title {
     padding: 0;
     font-size: 1.4rem;
@@ -417,17 +427,16 @@ body {
     font-size: 1.2rem;
   }
 
-  .tickBoxChecked{
+  .tickBoxChecked {
     width: 40px;
   }
 
-  .tickBoxChecked1{
+  .tickBoxChecked1 {
     width: 40px;
   }
 }
 
 @media screen and (max-width: 400px) {
-
   .section3Title {
     padding: 0;
     font-size: 1.2rem;

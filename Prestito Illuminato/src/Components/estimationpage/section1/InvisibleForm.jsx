@@ -1,7 +1,7 @@
 import { useState } from "react";
 import VisibleForm from "./VisibleForm";
 import { useDispatch } from "react-redux";
-import { setLoanAction, setRateAction, setTAEGAction, setYearAction } from "../../redux/actions";
+import { setLoanAction, setRateAction, setTAEGAction, setYearAction } from "../../../redux/actions";
 
 const InvisibleForm = ({ onMensileChange }) => {
   const dispatch = useDispatch();
