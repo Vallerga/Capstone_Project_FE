@@ -1,6 +1,7 @@
 const initialState = {
   adminToken: null,
   userToken: null,
+  userName: null,
 };
 
 const security = (state = initialState, action) => {
@@ -15,6 +16,11 @@ const security = (state = initialState, action) => {
             ...state,
             userToken: action.payload,
           };
+        case "SAVE_USERNAME":
+          return {
+            ...state,
+            userName: action.payload,
+          }
     default:
       return state;
   }

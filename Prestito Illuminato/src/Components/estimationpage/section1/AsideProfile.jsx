@@ -2,10 +2,11 @@ import { AiFillStar } from "react-icons/ai";
 import { Button } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const AsideProfile = () => {
   const [buttonState, setButtonState] = useState("false");
+  let userName = useSelector((state) => state.security.userName);
   const dispatch = useDispatch();
   const handleHistory = () => {
     setButtonState("true");
@@ -34,7 +35,7 @@ const AsideProfile = () => {
             />
           </div>
           <h2>
-            Ciao Antonio! Sono il tuo Credit Advisor di Prestito illuminato
+            Ciao {userName}! Sono Antonio, il tuo Credit Advisor di Prestito illuminato
           </h2>
           <div className="d-flex align-items-center justify-content-center">
             <p className="lightGreytext text-center">

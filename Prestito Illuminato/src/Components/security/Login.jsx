@@ -54,6 +54,13 @@ const Login = () => {
           type: "CHECK_ADMIN_TOKEN_REDUCER",
           payload: `Bearer ${result.accessToken}`,
         });
+
+        // send username to Redux store
+        dispatch({
+          type: "SAVE_USERNAME",
+          payload: username,
+        });
+        
       } else {
         alert(`errore durante il login, response status: ${response.status}`);
       }

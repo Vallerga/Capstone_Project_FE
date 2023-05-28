@@ -1,14 +1,9 @@
-
-import { Navigate } from "react-router-dom";
 import { Button, Col } from "react-bootstrap";
 
 // const URL = "http://localhost:8080/api/auth/signin"; // <--- TODO: da verificare
 
 const Register = () => {
-  if (null) {
-    return <Navigate to="/signup-success" />; // <--- TODO: da fare
-  }
-
+  
   return (
     <div className="d-flex loginTest windowComponent">
       <div className="loginImgComponent d-flex align-items-center justify-content-center">
@@ -34,5 +29,10 @@ const Register = () => {
     </div>
   );
 };
-/* onClick={loginHandler} */
+
 export default Register;
+
+// probabilmente non faccio la pagina di successo
+/* if (null) {
+  return <Navigate to="/signup-success" />; // <--- TODO: da fare
+} */ 
