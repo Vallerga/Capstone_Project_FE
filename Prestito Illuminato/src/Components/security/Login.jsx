@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     // prevent refresh
     event.preventDefault();
-    // loading body for sign in
+    // loading body for login in
     const bodyLogin = { 
       username: username,
       password: password
@@ -31,7 +31,7 @@ const Login = () => {
 
     console.debug(`bodyLogin used for fetch: ${JSON.stringify(bodyLogin, null, 2)}`);
 
-    // sent sign in credential and receive fresh token
+    // sent log in credential and receive fresh token
     try {
       const response = await fetch(URL, {
         method: "POST",
@@ -124,6 +124,12 @@ const Login = () => {
         >
           Accedi
         </Button>
+        <p>
+          Non riesci a connetterti?
+          <Link to={"/Register"}>
+            <span className="logIn">Clicca qui</span>
+          </Link>
+        </p>
       </form>
     </div>
   );
