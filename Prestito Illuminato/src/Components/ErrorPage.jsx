@@ -1,16 +1,29 @@
+import { useState } from "react";
 import { Button, Container, Row } from "react-bootstrap";
+import { Navigate } from "react-router-dom";
 
 const ErrorPage = () => {
+  const [condition, setCondition] = useState(false);
+
+  const handleErrorPage = () => {
+    setCondition(true);
+  };
+
+  if (condition) {
+    return <Navigate to="/" />;
+  }
   return (
-    <Container className="mainRow container-fluid section homePageBorder rounded-4 mt-4 mb-5">
-      <Row className="d-flex flex-column justify-content-center align-items-center px-5 errorPage">
+    <Container className="section homePageBorder rounded-4 mt-4 mb-5">
+      <Row className="d-flex flex-column justify-content-center align-items-center">
         <h2>URL NON SUPPORTATO! RITORNA ALLA HOMEPAGE O CHIAMA L'ASSISTENZA</h2>
         <Button
-              className="brandButton3 mt-5 align-self-stretch"
-              variant="primary"
-            >TORNA ALL'HOMEPAGE
+          onClick={handleErrorPage}
+          className="ErrorButton mb-5"
+          variant="primary"
+        >
+          ACCEDI AL SITO
         </Button>
-        </Row>
+      </Row>
     </Container>
   );
 };

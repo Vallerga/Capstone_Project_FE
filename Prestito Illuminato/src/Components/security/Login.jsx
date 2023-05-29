@@ -13,6 +13,15 @@ const BODY_EXAMPLE = {
   password: "pOtf8r$4Nb!",
 }; */
 
+/* const USER_EXAMPLE = {
+  firstname: "Antonio",
+  lastname: "Vallerga",
+  username: "Antonio",
+  email: "a.vallerga@gmail.com",
+  password: "123stella",
+  roles: ["ROLE_USER"]
+} */
+
 const Login = () => {
   
   const [username, setUsername] = useState("AccountAdmin");

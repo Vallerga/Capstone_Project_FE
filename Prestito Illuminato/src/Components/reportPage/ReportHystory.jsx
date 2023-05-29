@@ -31,7 +31,7 @@ const ReportHistory = () => {
       });
       if (response.ok) {
         const results = await response.json();
-        console.debug(`result: ${JSON.stringify(results, null, 2)}`);
+        console.log(`result: ${JSON.stringify(results, null, 2)}`);
         setReports(results);
       } else {
         alert(
@@ -62,7 +62,7 @@ const ReportHistory = () => {
             RITORNA ALLA HOMEPAGE
           </Button>
         </Col>
-        {/*         <div onClick={reportFetch}>CLICCAMI PER I REPORT</div>
+        {/* <div onClick={reportFetch}>CLICCAMI PER I REPORT</div>
         <div>{JSON.stringify(reports, null, 2)}</div> */}
       </Row>
     </Container>

@@ -20,78 +20,97 @@
 .brandButton1 {
   border-radius: 10px !important;
   padding: 20px 0px !important;
-  background-color: $LogoColorDark!important;
+  background-color: $LogoColorDark !important;
   margin: 35px;
-  color: $LogoColorBright!important;
+  color: $LogoColorBright !important;
 }
 
 .brandButton1:hover {
   background-color: $LogoColorDark2 !important;
-  color: $LogoColorBright2!important;
+  color: $LogoColorBright2 !important;
 }
 
 .brandButton1:active {
   background-color: $LogoColorBright !important;
-  color: $LogoColorDark!important;
+  color: $LogoColorDark !important;
 }
 
 .brandButton3 {
   border-radius: 10px !important;
   padding: 20px 22% !important;
-  background-color: $LogoColorDark!important;
+  background-color: $LogoColorDark !important;
   color: $LogoColorBright;
   margin: 35px 0 20px;
 }
 
 .brandButton3:hover {
   background-color: $LogoColorDark2 !important;
-  color: $LogoColorBright2!important;
+  color: $LogoColorBright2 !important;
 }
 
 .brandButton3:active {
   background-color: $LogoColorBright !important;
-  color: $LogoColorDark!important;
+  color: $LogoColorDark !important;
 }
 
 .brandButton4 {
   border-radius: 10px !important;
   padding: 20px 12% !important;
-  background-color: $LogoColorBright!important;
+  background-color: $LogoColorBright !important;
   margin: 35px 0 20px;
 }
 
 .brandButton4:hover {
   background-color: $LogoColorBright2 !important;
-  color: $LogoColorDark2!important;
+  color: $LogoColorDark2 !important;
 }
 
 .brandButton4:active {
   background-color: $LogoColorDark !important;
-  color: $LogoColorBright!important;
+  color: $LogoColorBright !important;
 }
 
 .brandButton5 {
   border-radius: 10px !important;
-  padding: 20px!important;
-  background-color: $LogoColorDark!important;
-  color: $LogoColorBright!important;
+  padding: 20px !important;
+  background-color: $LogoColorDark !important;
+  color: $LogoColorBright !important;
   margin: 35px 0 20px;
 }
 
 .brandButton5:hover {
   background-color: $LogoColorDark2 !important;
-  color: $LogoColorBright2!important;
+  color: $LogoColorBright2 !important;
 }
 
 .brandButton5:active {
   background-color: $LogoColorBright !important;
-  color: $LogoColorDark!important;
+  color: $LogoColorDark !important;
+}
+
+.ErrorButton {
+  border-radius: 10px !important;
+  padding: 20px !important;
+  background-color: $LogoColorDark !important;
+  color: $LogoColorBright !important;
+  margin: 35px 0 20px;
+  max-width: 200px;
+}
+
+.ErrorButton:hover {
+  background-color: $LogoColorDark2 !important;
+  color: $LogoColorBright2 !important;
+}
+
+.ErrorButton:active {
+  background-color: $LogoColorBright2 !important;
+  color: $LogoColorDark2 !important;
 }
 
 .log_reg_Button {
   border-radius: 10px !important;
   padding: 10px 12% !important;
-  background-color: $LogoColorBright!important;
+  background-color: $LogoColorBright !important;
   margin: 20px 0 20px;
   font-size: 1.2rem;
   font-weight: 500;
@@ -100,12 +119,12 @@
 
 .log_reg_Button:hover {
   background-color: $LogoColorBright2 !important;
-  color: $LogoColorDark!important;
+  color: $LogoColorDark !important;
 }
 
 .log_reg_Button:active {
   background-color: $bgWhite !important;
-  color: $LogoColorDark!important;
+  color: $LogoColorDark !important;
 }
 
 .outlineButtonBlack {
@@ -122,20 +141,20 @@
   width: 300px;
   border-radius: 10px !important;
   padding: 20px 0 !important;
-  background-color: $LogoColorDark!important;
+  background-color: $LogoColorDark !important;
   color: $bgWhite;
   margin: 35px 10px 20px;
-  align-self: flex-end!important;
+  align-self: flex-end !important;
 }
 
 .questionButton:hover {
   background-color: $LogoColorDark2 !important;
-  color: $LogoColorBright2!important;
+  color: $LogoColorBright2 !important;
 }
 
 .questionButton:active {
   background-color: $LogoColorBright2 !important;
-  color: $LogoColorDark2!important;
+  color: $LogoColorDark2 !important;
 }
 
 .circleButton {
@@ -158,7 +177,7 @@
 }
 
 @media (max-width: 500px) {
-  .outlineButtonBlack{
+  .outlineButtonBlack {
     font-size: 0.8rem;
   }
 }

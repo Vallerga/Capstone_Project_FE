@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 
 // const URL = "http://localhost:8080/api/auth/signin"; // <--- TODO: da verificare
@@ -40,12 +39,10 @@ const Register = () => {
       });
 
       // print fetch response
-      console.log(`response.ok: ${response.ok}, response.status: ${response.status}`);
+      console.debug(`response.ok: ${response.ok}, response.status: ${response.status}`);
 
       if (response.ok) {
-        setRegistered(true);
-        const result = await response.json();
-        console.log(`result: ${JSON.stringify(result, null, 2)}`);
+        setRegistered(true);        
         alert(`Registrazione avvenuta corretamente, accedi subito all'area utenti ${username}!`);
 
       } else {
@@ -142,7 +139,7 @@ const Register = () => {
           type="submit"
           className="log_reg_Button"          
         >
-          Accedi
+          Registrati
         </Button>
       <p>
           Sei già registrato?

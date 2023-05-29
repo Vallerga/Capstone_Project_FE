@@ -25,7 +25,7 @@ function Amount() {
     (state) => state.estimation.LoanRequest.actualLoanRequest
   );
   let checkStore = useSelector((state) => state.estimation.LoanRequest);
-  console.log("THIS IS THE STORE: ", checkStore);
+  console.debug("THIS IS THE STORE: ", checkStore);
 
   //
   const mounthlyAmountFromStore = useCallback(() => {
@@ -34,8 +34,7 @@ function Amount() {
     const monthlyRateCalculated =
       (actualLoanRequestStore * (r * Math.pow(1 + r, n))) /
       (Math.pow(1 + r, n) - 1);
-    dispatch(setMonthlyRateAction(monthlyRateCalculated));
-    console.log("MENSILITA CALCOLATA MALE? ", monthlyRateCalculated);
+    dispatch(setMonthlyRateAction(monthlyRateCalculated));    
     setImportoMensile(monthlyRateStore);
     gestoreMensile(monthlyRateStore);
     // settingVisibleForm(rateStore, TAEGStore);
