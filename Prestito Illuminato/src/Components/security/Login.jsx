@@ -24,8 +24,8 @@ const BODY_EXAMPLE = {
 
 const Login = () => {
   
-  const [username, setUsername] = useState("AccountAdmin");
-  const [password, setPassword] = useState("pOtf8r$4Nb!");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   let dispatch = useDispatch();
 

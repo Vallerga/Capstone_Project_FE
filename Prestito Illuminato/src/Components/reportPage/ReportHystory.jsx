@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import TableComponent from "./TableComponent";
 import { Navigate } from "react-router-dom";
 
 const ReportHistory = () => {
+  const username = useSelector((state) => state.security.userName);
   const [buttonState, setButtonState] = useState("false");
   const dispatch = useDispatch();
   const LinkHomePage = () => {
@@ -21,7 +22,7 @@ const ReportHistory = () => {
   const URL = "http://localhost:8080/api/reports";
   const [reports, setReports] = useState(null);
   const adminToken = useSelector((state) => state.security.adminToken);
-  const reportFetch = async () => {
+  const reportFetch = useCallback(async () => {
     try {
       const response = await fetch(URL, {
         headers: {
@@ -31,8 +32,11 @@ const ReportHistory = () => {
       });
       if (response.ok) {
         const results = await response.json();
-        console.log(`result: ${JSON.stringify(results, null, 2)}`);
-        setReports(results);
+        let userResults = results.filter(
+          (reports) => reports.user.username === username
+        );
+        console.debug(`userResults: ${JSON.stringify(userResults, null, 2)}`);
+        setReports(userResults);
       } else {
         alert(
           `errore durante download reports, response status: ${response.status}`
@@ -41,9 +45,11 @@ const ReportHistory = () => {
     } catch (error) {
       alert(`errore durante download reports: ${error}`);
     }
-  };
+  }, [adminToken, username]);
 
-  reportFetch();
+  useEffect(() => {
+    reportFetch();
+  }, [reportFetch]);
 
   if (buttonState === "true") {
     return <Navigate to="/Home" />;
@@ -51,7 +57,10 @@ const ReportHistory = () => {
   return (
     <Container className="container-fluid section rounded-4 mt-4 mb-5">
       <Row className="d-flex flex-column align-items-center">
-        <Col xs={12} className="d-flex flex-column align-items-center px-5 py-3">
+        <Col
+          xs={12}
+          className="d-flex flex-column align-items-center px-5 py-3"
+        >
           <h1>STORICO MUTUI</h1>
           <TableComponent tableValue={reports} />
           <Button
