@@ -27,4 +27,4 @@ nostri utenti.
 modificabile, altrimenti con un modale per l’immissione dei dati.
  Pagina storico precedenti ricerche/contratti
 
-Per accedere alla parte Front-End potete liberamente consultare: (https://github.com/Vallerga/Capstone_Project.git)
+Per accedere alla parte Back-End potete liberamente consultare: (https://github.com/Vallerga/Capstone_Project.git)
