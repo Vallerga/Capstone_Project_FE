@@ -2,6 +2,7 @@
   position: relative;
   box-shadow: 0 3px 2px -2px $grey2;
   background: white;
+  height: 90px;
 }
 
 .logo3 {
@@ -16,23 +17,33 @@
   font-size: 0.8rem;
   position: absolute;
   right: 0%;
-  transform: translate(-100%, -140%);
+  transform: translate(-100%, -160%);
 }
 
 @media screen and (max-width: 1000px) {
   .phoneNum {
-    transform: translate(-50%, -140%);
+    transform: translate(-50%, -160%);
   }
 }
 
 @media screen and (max-width: 900px) {
   .phoneNum {
-    transform: translate(-10%, -140%);
+    transform: translate(-10%, -160%);
   }
 }
 
 @media screen and (max-width: 800px) {
   .phoneNum {
     display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navBar h1 {
+    font-size: 2rem;
+  }
+
+  .logo3 {
+    width:40px;
   }
 }

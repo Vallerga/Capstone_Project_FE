@@ -1,4 +1,5 @@
 import AboutUs from "./AboutUs";
+import AskNow from "./AskNow";
 import CompareLoan from "./CompareLoan";
 
 const EstimationPage = () => {
@@ -6,6 +7,7 @@ const EstimationPage = () => {
     <>
       <CompareLoan />
       <AboutUs />
+      <AskNow />
     </>
   );
 };

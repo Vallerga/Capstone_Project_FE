@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import { useState } from "react";
 
 const URL = "http://localhost:8080/api/auth/login";
@@ -23,9 +23,8 @@ const BODY_EXAMPLE = {
 } */
 
 const Login = () => {
-  
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("AccountAdmin");
+  const [password, setPassword] = useState("pOtf8r$4Nb!");
 
   let dispatch = useDispatch();
 
@@ -33,12 +32,14 @@ const Login = () => {
     // prevent refresh
     event.preventDefault();
     // loading body for login in
-    const bodyLogin = { 
+    const bodyLogin = {
       username: username,
-      password: password
+      password: password,
     };
 
-    console.debug(`bodyLogin used for fetch: ${JSON.stringify(bodyLogin, null, 2)}`);
+    console.debug(
+      `bodyLogin used for fetch: ${JSON.stringify(bodyLogin, null, 2)}`
+    );
 
     // sent log in credential and receive fresh token
     try {
@@ -51,7 +52,9 @@ const Login = () => {
       });
 
       // print fetch response
-      console.debug(`response.ok: ${response.ok}, response.status: ${response.status}`);
+      console.debug(
+        `response.ok: ${response.ok}, response.status: ${response.status}`
+      );
 
       if (response.ok) {
         const result = await response.json();
@@ -69,17 +72,14 @@ const Login = () => {
           type: "SAVE_USERNAME",
           payload: username,
         });
-        
       } else {
         alert(`errore durante il login, response status: ${response.status}`);
       }
     } catch (error) {
       alert(`errore durante il login: ${error}`);
-    }    
+    }
   };
 
-  
-  
   // Token stored in Redux Store
   let adminToken = useSelector((state) => state.security.adminToken);
   console.debug(`adminToken Render: ${adminToken && adminToken.slice(20)}`);
@@ -89,58 +89,57 @@ const Login = () => {
   }
 
   return (
-    <div className="d-flex loginTest">
-      <div className="loginImgComponent d-flex align-items-center justify-content-center">
-        <img
-          className="loginLogo"
-          src={require("../../assets/image/Loan_login.png")}
-          alt="loginImg"
-        />
-      </div>
-      <form
-        className="formComponent d-flex flex-column align-items-center align-content-center justify-content-center "
-        onSubmit={handleSubmit}
-      >
-        <div>
-          <label className="d-block" htmlFor="username">
-            Username:
-          </label>
-          <input
-            className="my-3 p-2"
-            type="text"
-            placeholder="inserisci username"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+    <Row className="loginBg">
+      <Col className="d-flex flex-column flex-lg-row align-items-center">
+        <div className="loginImgComponent d-flex align-items-center justify-content-center">
+          <img
+            className="loginLogo"
+            src={require("../../assets/image/Loan_login.png")}
+            alt="loginImg"
           />
         </div>
-        <div>
-          <label className="d-block" htmlFor="password">
-            Password:
-          </label>
-          <input
-            className="my-3 p-2"
-            type="password"
-            placeholder="inserisci password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <Button
-          type="submit"
-          className="log_reg_Button"          
+        <form
+          className="formComponent d-flex flex-column align-items-center align-content-center justify-content-center"
+          onSubmit={handleSubmit}
         >
-          Accedi
-        </Button>
-        <p>
-          Non riesci a connetterti?
-          <Link to={"/Register"}>
-            <span className="logIn">Clicca qui</span>
-          </Link>
-        </p>
-      </form>
-    </div>
+          <div>
+            <label className="d-block" htmlFor="username">
+              Username:
+            </label>
+            <input
+              className="my-1 m p-1"
+              type="text"
+              placeholder="inserisci username"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="d-block" htmlFor="password">
+              Password:
+            </label>
+            <input
+              className="my-1 p-1"
+              type="password"
+              placeholder="inserisci password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <Button type="submit" className="log_reg_Button">
+            Accedi
+          </Button>
+          <p>
+            Non riesci a connetterti?
+            <Link to={"/Register"}>
+              <span className="logIn">Clicca qui</span>
+            </Link>
+          </p>
+        </form>
+      </Col>
+    </Row>
   );
 };
 

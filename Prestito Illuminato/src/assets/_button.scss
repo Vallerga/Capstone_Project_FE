@@ -111,7 +111,7 @@
   border-radius: 10px !important;
   padding: 10px 12% !important;
   background-color: $LogoColorBright !important;
-  margin: 20px 0 20px;
+  margin: 20px 0;
   font-size: 1.2rem;
   font-weight: 500;
   color: $LogoColorDark;
@@ -126,6 +126,17 @@
   background-color: $bgWhite !important;
   color: $LogoColorDark !important;
 }
+
+@media screen and (max-width: 767px) {
+  .log_reg_Button {
+    border-radius: 10px !important;
+    padding: 10px 12% !important;
+    margin: 15px 0;
+    font-size: 1rem;
+  }
+}
+
+
 
 .outlineButtonBlack {
   border-radius: 10px !important;

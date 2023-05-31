@@ -1,35 +1,144 @@
 .loginLogo {
-    width: 80%;
+  width: 80%;
 }
 
 .loginImgComponent {
-    width:45%;
-    height: 75vh;
+  width: 45%;
 }
 
 .formComponent {
-    padding-left:200px;
+  padding-left: 200px;
+  font-size: 1rem;
 }
 
 .logIn {
-    margin-left: 10px;
-    color:$LogoColorBright;
-    text-decoration:underline!important;
-    text-decoration-color:$LogoColorDark!important;
+  margin-left: 10px;
+  color: $LogoColorBright;
+  text-decoration: underline !important;
+  text-decoration-color: $LogoColorDark !important;
 }
 
 .logIn:hover {
-    color:$LogoColorBright2;
+  color: $LogoColorBright2;
 }
 
 .logIn:active {
-    color:white;
+  color: white;
 }
 
-.loginTest {
-  background: linear-gradient(100deg, #F7F7F7 45%, $LogoColorDark3 20%);
+.loginBg {
+  background: linear-gradient(100deg, #f7f7f7 45%, $LogoColorDark3 20%);
   color: $bgWhite;
-  margin-top: 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 5px $grey0;
+  margin: 25px 0 !important;
+}
+
+.signInBg {
+  background: linear-gradient(100deg, #f7f7f7 45%, $LogoColorDark3 20%);
+  color: $bgWhite;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px $grey0;
+  margin: 25px 0 !important;
+  padding: 30px;
+}
+
+@media screen and (min-width: 991px) {
+  .loginBg {
+    height: 77vh;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .formComponent {
+    padding-left: 150px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .loginImgComponent {
+    width: 35%;
+  }
+  .formComponent {
+    padding-left: 200px;
+  }
+  .loginLogo {
+    width: 120%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .formComponent {
+    padding-left: 160px;
+    font-size: 0.8rem;
+  }
+  
+  .loginLogo {
+    width: 140%;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .loginBg {
+    background: linear-gradient(180deg, #f7f7f7 45%, $LogoColorDark3 20%);
+    height: 78.3vh;
+  }
+
+  .signInBg {
+    background: linear-gradient(180deg, #f7f7f7 30%, $LogoColorDark3 20%);
+  }
+
+  .loginLogo {
+    width: 180%;
+  }
+
+  .formComponent {
+    padding-left: 0px;
+    margin-bottom: 20px;
+    padding-top: 30%;
+  }
+
+  .formComponentSignIn {
+    padding-top: 5%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .loginLogo {
+    width: 250%;
+    margin-top: 40px;
+    padding-top: 10%;
+  }
+
+  .formComponentSignIn {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .loginLogo {
+    width: 250%;
+    margin-top: 0px;
+    padding: 10% 0;
+  }
+
+  .loginLogoSignIn {
+    width: 230%;
+  }
+
+  .formComponentSignIn{
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+    .loginLogoSignIn {
+        width: 230%;
+      }
+
+    .formComponentSignIn{
+        margin-top: 100px;
+      }
 }

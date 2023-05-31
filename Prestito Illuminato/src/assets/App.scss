@@ -315,13 +315,10 @@ body {
 }
 
 .footer {
-  z-index: 10;
   background: black;
   color: white;
   height: 80px;
   font-size: 1.2rem;
-  position: fixed;
-  bottom: 0px;
   width: 100%;
 }
 
@@ -403,11 +400,14 @@ body {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
   .footer {
     font-size: 0.8rem;
+    height: 60px;
   }
+}
 
+@media screen and (max-width: 800px) {
   .tickBoxChecked {
     width: 70px;
   }

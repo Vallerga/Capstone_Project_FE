@@ -9,7 +9,7 @@ const NavCustom = () => {
         <img
           className="logo3 pb-3 me-3"
           src={require("../assets/image/Prestito illuminato logo.png")}
-          alt="a"
+          alt="myLogo"
         />
         Prestito
         <span className="ms-2 logoColorDark" >

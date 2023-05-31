@@ -19,7 +19,7 @@ const CompareLoan = () => {
   };
 
   if(questionary) {
-    return <Navigate to="/Questionary" />
+    return <Navigate to="/EstimationPage" />
   }
 
   return (

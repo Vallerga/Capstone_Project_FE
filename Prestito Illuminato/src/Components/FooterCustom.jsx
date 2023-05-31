@@ -3,7 +3,7 @@ import { BiCopyright } from "react-icons/bi";
 const FooterCustom = () => {
   return (
     <div className="d-flex footer align-items-center">
-      <p className="ps-4 d-flex flex-column flex-md-row footer align-items-center">
+      <p className="ps-4 d-flex footer align-items-center">
         <BiCopyright />
         <span>
           &nbsp; Copyright 2023 &nbsp; Prestitoilluminato.it
