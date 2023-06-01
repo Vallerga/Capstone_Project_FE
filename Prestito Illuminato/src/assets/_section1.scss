@@ -33,6 +33,11 @@
   color: $LogoColorBright2;
 }
 
+.brandButton2:active {
+  background-color: $LogoColorDark;
+  color: $LogoColorBright;
+}
+
 
 .selectedRate {
   background-color: $LogoColorDark;
@@ -141,6 +146,11 @@
 .duration:hover {
   background-color: $LogoColorDark2;
   color: $LogoColorBright2;
+}
+
+.duration:active {
+  background-color: $LogoColorDark;
+  color: $LogoColorBright;
 }
 
 .yearSelected {

@@ -61,7 +61,8 @@ const ReportHistory = () => {
           xs={12}
           className="d-flex flex-column align-items-center px-5 py-3"
         >
-          <h1>STORICO MUTUI</h1>
+          <h1 className="d-none d-lg-block">STORICO MUTUI</h1>
+          <h2 className="d-lg-none">STORICO MUTUI</h2>
           <TableComponent tableValue={reports} />
           <Button
             onClick={LinkHomePage}

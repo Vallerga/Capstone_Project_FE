@@ -4,11 +4,11 @@
 }
 
 .homePageBorder {
-  padding: 0 10% !important;
+  padding: 0 10%;
 }
 
 .homeCard {
-  width: 200px !important;
+  width: 200px;
   height: 300px;
   font-size: 0.8rem;
   text-align: start;
@@ -19,7 +19,7 @@
 }
 
 .squareBox {
-  min-width: 300px !important;
+  width: 27%;
   height: 250px;
   background-color: $bgWhite;
   z-index: 1;
@@ -27,18 +27,22 @@
 }
 
 .backBox {
-  width: 70%;
   height: 300px;
   background-color: $LogoColorBright;
   position: absolute;
   z-index: 0;
+  width: 90%;
+  left: 5%;
+}
+
+.mobileBackBox {
   display: flex;
   justify-content: space-between;
-  left: 15%;
+  width: 100%;
 }
 
 .marginTop {
-  margin: 150px 150px 25px;
+  margin: 150px 0 30px 10%;
 }
 
 .reader {
@@ -47,7 +51,7 @@
 }
 
 .marginBottom {
-  margin-bottom: 100px !important;
+  margin-bottom: 100px!important;
 }
 
 @media (max-width: 1600px) {
@@ -58,21 +62,57 @@
     width: 150px;
   }
 
-  .squareBox {
-    
-    height:200px;
-    aspect-ratio: 1/1;
+  .squareBox {    
+    width:250px;
     .homeIcon {
       font-size: 3rem;
     }
   }
+  
   .marginTop {
-    margin: 150px 50px 30px;
+    margin: 180px 80px 30px;
   }
 
   .backBox {
-    width: 60%;
-    height: 300px;
-    left: 20%;
+    height: 250px;
   }
 }
+
+@media (max-width: 1400px) {
+  .squareBox {    
+    width:200px;
+    height:200px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .squareBox {    
+    width:170px;
+    height:170px;
+    padding: 0 5px!important;
+    text-align: center!important;    
+  }
+
+  .marginTop{
+    margin: 180px 70px 30px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .marginTop{
+    margin: 180px 80px 30px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .marginTop{
+    margin: 180px 20px 30px;
+  }
+
+  .squareBox {
+    width:130px;
+    height:130px;
+  }
+}
+

@@ -25,7 +25,7 @@ const VisibleForm = ({ tasso, TAEG }) => {
   // use tasso and TAEG props if you want to use props
   useEffect(() => {
     gestoreTasso(rateStore);
-    gestoreTAEG(TAEGStore);    
+    gestoreTAEG(TAEGStore);
   }, [rateStore, TAEGStore]);
 
   return (    
@@ -46,7 +46,7 @@ const VisibleForm = ({ tasso, TAEG }) => {
             TAEG <AiFillInfoCircle className="infoIcon fs-4 ms-2 d-none d-md-inline-block" />
           </div>
           <div className="smallFont me-0 me-lg-5">
-            <span>{Math.floor(TAEG)},</span> {/* use TAEG props if you want to use props */}
+            <span>{Math.floor(TAEGStore)},</span> {/* use TAEG props if you want to use props */}
             {decimaleTAEG}%
           </div>
         </div>
