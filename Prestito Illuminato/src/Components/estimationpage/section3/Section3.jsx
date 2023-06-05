@@ -1,13 +1,17 @@
+import { useEffect } from "react";
 import { Button, Container, Row } from "react-bootstrap";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
-const URL = "http://localhost:8080/api/reports";
+const URLREPORT = "http://localhost:8080/api/reports";
+const URLUSER = "http://localhost:8080/api/reports/users";
 
 const Section3 = () => {
   const LoanRequest = useSelector((state) => state.estimation.LoanRequest);
-  const token = useSelector((state) => state.security.adminToken)
-
+  const userToken = useSelector((state) => state.security.userToken);
+  const userName = useSelector((state) => state.security.userName);
+  let loggedUser;
+  let idValue;
   const bodyReport = {
     year: LoanRequest.year,
     actualLoanRequest: LoanRequest.actualLoanRequest,
@@ -18,29 +22,59 @@ const Section3 = () => {
     taeg: LoanRequest.TAEG,
     monthlyRate: LoanRequest.monthlyRate,
     user: {
-      id: 1,
+      id: idValue,
     },
   };
 
+  if (loggedUser) {
+    idValue = loggedUser.id;
+  } else {
+    idValue = 1;
+  }
+
+  const getAllUser = async () => {
+    try {
+      const response = await fetch(URLUSER, {
+        headers: {
+          token: userToken,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        let users = await response.json();
+        console.log(JSON.stringify(users, null, 2))
+        loggedUser = users.filter((user) => user.username === userName);
+        // await console.log(`loggedUser: ${JSON.stringify(loggedUser)}`);
+      } else {
+        alert(
+          `errore durante il salvataggio stima mutuo, risposta del server: ${response.status}`
+        );
+      }
+    } catch (error) {
+      alert(
+        `Salvataggio stima muotuo non avvenuta, chiedere assistenza: ${error}`
+      );
+    }
+  };
+
+  useEffect(() => {
+    getAllUser();
+  }, [userName]);
+
   const handlePostReport = async () => {
     // create report
-    console.debug("handlePostReport è eseguito");
     try {
-      const response = await fetch(URL, {
+      const response = await fetch(URLREPORT, {
         method: "POST",
         headers: {
-          "token": token,
+          token: userToken,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(bodyReport),
       });
 
-      // print fetch response
-      console.debug(
-        `response.ok: ${response.ok}, response.status: ${response.status}`
-      );
-
-      if (response.ok) {        
+      if (response.ok) {
         alert(`Salvataggio stima mutuo avvenuta corretamente!`);
       } else {
         alert(

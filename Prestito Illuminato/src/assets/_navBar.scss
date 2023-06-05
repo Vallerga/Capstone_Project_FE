@@ -11,39 +11,65 @@
   object-position: top;
 }
 
+.webTitle {
+  margin-left: 50%;
+  transform: translate(-30%, 5%);
+}
+
+.fontWebTitle {
+  font-size: 3rem!important;
+}
+
 .phoneNum {
   color: $grey1;
   line-height: 1.4rem;
   font-size: 0.8rem;
   position: absolute;
   right: 0%;
-  transform: translate(-100%, -160%);
+  transform: translate(-30%, 0);
 }
 
-@media screen and (max-width: 1000px) {
-  .phoneNum {
-    transform: translate(-50%, -160%);
+.userLogNav {
+  color: $LogoColorDark;
+  font-size: 1.4rem;
+}
+
+.navButton {
+  color: $LogoColorBright;
+  background-color: $LogoColorDark;
+  border-radius: 15px;
+  font-size: 1.1rem;  
+}
+
+@media screen and (max-width: 1650px) {
+  .fontWebTitle {
+    font-size: 2rem!important;
+  }
+
+  .logo3 {
+    width: 40px;
   }
 }
 
-@media screen and (max-width: 900px) {
-  .phoneNum {
-    transform: translate(-10%, -160%);
+@media screen and (max-width: 1380px) {
+  .logo3 {
+    display:none;
+  }
+
+  .userLogNav {
+    display:none;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .phoneNum {
-    display: none;
+  .webTitle {
+    margin-left: 5%;
+    transform: translate(0, 0);
   }
 }
 
 @media screen and (max-width: 500px) {
-  .navBar h1 {
-    font-size: 2rem;
-  }
-
-  .logo3 {
-    width:40px;
+  .fontWebTitle {
+    font-size: 1.8rem!important;
   }
 }

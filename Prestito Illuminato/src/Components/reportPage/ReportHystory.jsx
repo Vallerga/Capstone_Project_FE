@@ -21,19 +21,19 @@ const ReportHistory = () => {
   };
   const URL = "http://localhost:8080/api/reports";
   const [reports, setReports] = useState(null);
-  const adminToken = useSelector((state) => state.security.adminToken);
+  const userToken = useSelector((state) => state.security.userToken);
   const reportFetch = useCallback(async () => {
     try {
       const response = await fetch(URL, {
         headers: {
-          Authorization: adminToken,
+          Authorization: userToken,
           "Content-Type": "application/json",
         },
       });
       if (response.ok) {
         const results = await response.json();
         let userResults = results.filter(
-          (reports) => reports.user.username === username
+          (report) => report.user.username === username
         );
         console.debug(`userResults: ${JSON.stringify(userResults, null, 2)}`);
         setReports(userResults);
@@ -45,7 +45,7 @@ const ReportHistory = () => {
     } catch (error) {
       alert(`errore durante download reports: ${error}`);
     }
-  }, [adminToken, username]);
+  }, [userToken, username]);
 
   useEffect(() => {
     reportFetch();

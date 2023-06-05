@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { Button, Col, Row } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const URL = "http://localhost:8080/api/auth/login";
 
@@ -23,8 +23,39 @@ const BODY_EXAMPLE = {
 } */
 
 const Login = () => {
-  const [username, setUsername] = useState("AccountAdmin");
-  const [password, setPassword] = useState("pOtf8r$4Nb!");
+  let result;
+
+  let body = localStorage.getItem("userT");
+  let tok = JSON.parse(body);
+  let logged = localStorage.getItem("rememberMe");
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [activateLocal, setActivateLocal] = useState(false);
+  const [checkState, setCheckState] = useState(null);
+
+  useEffect(() => {
+  if (logged) {
+  setActivateLocal(true)
+  }
+  },[logged])
+
+  useEffect(() => {
+    if (tok) {
+      setUsername(tok.username);
+      setPassword(localStorage.getItem("pass"));
+      // console.log(`usernameLocal e passwordLocal: ${username}, ${password}`)
+      if(activateLocal) {
+        setCheckState(true)
+      } else {
+        setCheckState(false)
+      }
+    }
+  },[tok, activateLocal])
+  
+  const handleChange = () => {
+    setActivateLocal(!activateLocal);
+  };
 
   let dispatch = useDispatch();
 
@@ -37,10 +68,6 @@ const Login = () => {
       password: password,
     };
 
-    console.debug(
-      `bodyLogin used for fetch: ${JSON.stringify(bodyLogin, null, 2)}`
-    );
-
     // sent log in credential and receive fresh token
     try {
       const response = await fetch(URL, {
@@ -51,19 +78,14 @@ const Login = () => {
         body: JSON.stringify(bodyLogin),
       });
 
-      // print fetch response
-      console.debug(
-        `response.ok: ${response.ok}, response.status: ${response.status}`
-      );
-
       if (response.ok) {
-        const result = await response.json();
+        result = await response.json();
         // print fetch response body
-        console.debug(`result: ${JSON.stringify(result, null, 2)}`);
+        let value = JSON.stringify(result, null, 2);
 
         // send token to Redux store
         dispatch({
-          type: "CHECK_ADMIN_TOKEN_REDUCER",
+          type: "CHECK_TOKEN_REDUCER",
           payload: `Bearer ${result.accessToken}`,
         });
 
@@ -72,6 +94,14 @@ const Login = () => {
           type: "SAVE_USERNAME",
           payload: username,
         });
+        console.log("activateLocal: ", activateLocal)
+        if (activateLocal) {
+          localStorage.setItem("userT", value);
+          localStorage.setItem("pass", password);
+          localStorage.setItem("rememberMe", "logged");
+        } else {
+          localStorage.clear();
+        }
       } else {
         alert(`errore durante il login, response status: ${response.status}`);
       }
@@ -81,10 +111,9 @@ const Login = () => {
   };
 
   // Token stored in Redux Store
-  let adminToken = useSelector((state) => state.security.adminToken);
-  console.debug(`adminToken Render: ${adminToken && adminToken.slice(20)}`);
+  let userToken = useSelector((state) => state.security.userToken);
 
-  if (adminToken) {
+  if (userToken) {
     return <Navigate to="/Home" />;
   }
 
@@ -127,6 +156,18 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+          </div>
+          <div className="d-flex align-items-center pt-3">
+            <input
+              onChange={handleChange}
+              type="checkbox"
+              id="rememberMe"
+              name="rememberMe"
+              checked={checkState}
+            />
+            <label className="ms-2" htmlFor="rememberMe">
+              Memorizza profilo utente
+            </label>
           </div>
           <Button type="submit" className="log_reg_Button">
             Accedi

@@ -17,7 +17,7 @@ import { useSelector } from "react-redux";
 import ReportHistory from "./Components/reportPage/ReportHystory";
 
 function App() {
-  const adminToken = useSelector((state) => state.security.adminToken);
+  const userToken = useSelector((state) => state.security.userToken);
   return (
     <>
       <BrowserRouter>
@@ -29,28 +29,28 @@ function App() {
             <Route
               path="/Home"
               element={
-                <Protected isLoggedIn={adminToken}>
+                <Protected isLoggedIn={userToken}>
                   <Home />
                 </Protected>
               }/>
             <Route
               path="/Questionary"
               element={
-                <Protected isLoggedIn={adminToken}>
+                <Protected isLoggedIn={userToken}>
                   <Questionary />
                 </Protected>
               }/>
             <Route
               path="/EstimationPage"
               element={
-                <Protected isLoggedIn={adminToken}>
+                <Protected isLoggedIn={userToken}>
                   <EstimationPage />
                 </Protected>
               }/>
               <Route
               path="/ReportHistory"
               element={
-                <Protected isLoggedIn={adminToken}>
+                <Protected isLoggedIn={userToken}>
                   <ReportHistory />
                 </Protected>
               }/>
