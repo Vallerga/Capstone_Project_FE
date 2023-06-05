@@ -32,10 +32,15 @@ const ReportHistory = () => {
       });
       if (response.ok) {
         const results = await response.json();
+        // await console.log("username profilo: ", username)
+        // await console.log("results: ", results)
         let userResults = results.filter(
-          (report) => report.user.username === username
+          (report, i) => {
+            // console.log(`username numero ${i}: ${report.user.username}`)
+            return report.user.username === username
+          }
         );
-        console.debug(`userResults: ${JSON.stringify(userResults, null, 2)}`);
+        console.log(`userResults: ${JSON.stringify(userResults, null, 2)}`);
         setReports(userResults);
       } else {
         alert(

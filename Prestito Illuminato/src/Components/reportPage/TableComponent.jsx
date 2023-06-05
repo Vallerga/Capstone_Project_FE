@@ -1,6 +1,9 @@
+import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 
 function TableComponent({ tableValue }) {
+  let buffer;
+  let decimal;
   return (
     <>
     <Table striped hover className="d-lg-none text-center table1">
@@ -17,7 +20,12 @@ function TableComponent({ tableValue }) {
         </tr>
       </thead>
       <tbody>
-        {tableValue && tableValue.map((report) => {
+        {tableValue && tableValue.map((report) => {          
+            buffer = report.monthlyRate - Math.floor(report.monthlyRate);
+            decimal = buffer.toString().slice(2, 4);
+            if(buffer === 0) {
+              decimal = "00";
+            }
           return (
             <tr className="logoBgBright">
               <td className="logoColorDark2">{report.id}</td>
@@ -27,7 +35,7 @@ function TableComponent({ tableValue }) {
               <td className="logoColorDark2">{report.sustainability}</td>
               <td className="logoColorDark2">{report.rate}</td>
               <td className="logoColorDark2">{report.taeg}%</td>
-              <td className="logoColorDark2"><strong>{report.monthlyRate}€</strong></td>
+              <td className="logoColorDark2"><strong><span>{Math.floor(report.monthlyRate)},</span>{decimal}€</strong></td>
             </tr>
           );
         })}
@@ -57,7 +65,7 @@ function TableComponent({ tableValue }) {
               <td className="logoColorDark2">{report.sustainability}</td>
               <td className="logoColorDark2">{report.rate}</td>
               <td className="logoColorDark2">{report.taeg}%</td>
-              <td className="logoColorDark2"><strong>{report.monthlyRate}€</strong></td>
+              <td className="logoColorDark2"><strong><span>{Math.floor(report.monthlyRate)},</span>{decimal}€</strong></td>
             </tr>
           );
         })}        

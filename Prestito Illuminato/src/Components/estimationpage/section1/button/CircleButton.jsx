@@ -31,7 +31,7 @@ const CircleButton = ({
         }
         actualLoanRequest += changer;
         dispatch(setLoanAction(actualLoanRequest));
-        console.log("loanRequest del bottone", actualLoanRequest);
+        // console.log("loanRequest del bottone", actualLoanRequest);
       } else if (type === "-") {
         if (actualLoanRequest - changer < 0) {
           alert("Loan request cannot be less than 0€");
@@ -39,7 +39,7 @@ const CircleButton = ({
         }
         actualLoanRequest -= changer;
         dispatch(setLoanAction(actualLoanRequest));
-        console.log("loanRequest del bottone", actualLoanRequest);
+        // console.log("loanRequest del bottone", actualLoanRequest);
       }
     } else if (whatIs === "totalImportImmobile") {
       if (type === "+") {
@@ -49,7 +49,7 @@ const CircleButton = ({
         }
         actualTotalImport += changer;
         dispatch(setTotalImportAction(actualTotalImport));
-        console.log("totalImportImmobile del bottone", actualTotalImport);
+        // console.log("totalImportImmobile del bottone", actualTotalImport);
       } else if (type === "-") {
         if (actualTotalImport - changer < actualLoanRequest) {
           alert("Total import immobile cannot be less than loan request");
@@ -60,7 +60,7 @@ const CircleButton = ({
         }
         actualTotalImport -= changer;
         dispatch(setTotalImportAction(actualTotalImport));
-        console.log("totalImportImmobile del bottone", actualTotalImport);
+        // console.log("totalImportImmobile del bottone", actualTotalImport);
       }
     }
   };

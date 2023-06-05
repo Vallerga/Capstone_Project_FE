@@ -94,7 +94,7 @@ const Login = () => {
           type: "SAVE_USERNAME",
           payload: username,
         });
-        console.log("activateLocal: ", activateLocal)
+        
         if (activateLocal) {
           localStorage.setItem("userT", value);
           localStorage.setItem("pass", password);

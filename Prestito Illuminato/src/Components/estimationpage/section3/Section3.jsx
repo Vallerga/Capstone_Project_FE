@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button, Container, Row } from "react-bootstrap";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useSelector } from "react-redux";
@@ -10,8 +10,8 @@ const Section3 = () => {
   const LoanRequest = useSelector((state) => state.estimation.LoanRequest);
   const userToken = useSelector((state) => state.security.userToken);
   const userName = useSelector((state) => state.security.userName);
-  let loggedUser;
-  let idValue;
+  const [idValue, setIdValue] = useState(null);
+
   const bodyReport = {
     year: LoanRequest.year,
     actualLoanRequest: LoanRequest.actualLoanRequest,
@@ -26,13 +26,7 @@ const Section3 = () => {
     },
   };
 
-  if (loggedUser) {
-    idValue = loggedUser.id;
-  } else {
-    idValue = 1;
-  }
-
-  const getAllUser = async () => {
+  const getAllUser = useCallback(async () => {
     try {
       const response = await fetch(URLUSER, {
         headers: {
@@ -43,9 +37,9 @@ const Section3 = () => {
 
       if (response.ok) {
         let users = await response.json();
-        console.log(JSON.stringify(users, null, 2))
-        loggedUser = users.filter((user) => user.username === userName);
-        // await console.log(`loggedUser: ${JSON.stringify(loggedUser)}`);
+        let loggedUser = users.filter((user) => user.username === userName);
+        await setIdValue(loggedUser.id)
+        await console.log(`loggedUser: ${JSON.stringify(loggedUser)}`);        
       } else {
         alert(
           `errore durante il salvataggio stima mutuo, risposta del server: ${response.status}`
@@ -56,11 +50,11 @@ const Section3 = () => {
         `Salvataggio stima muotuo non avvenuta, chiedere assistenza: ${error}`
       );
     }
-  };
+  },[userToken, userName]);
 
   useEffect(() => {
     getAllUser();
-  }, [userName]);
+  }, [getAllUser]);
 
   const handlePostReport = async () => {
     // create report
@@ -73,7 +67,7 @@ const Section3 = () => {
         },
         body: JSON.stringify(bodyReport),
       });
-
+      console.log("idValue: ",idValue)
       if (response.ok) {
         alert(`Salvataggio stima mutuo avvenuta corretamente!`);
       } else {
@@ -87,6 +81,10 @@ const Section3 = () => {
       );
     }
   };
+
+  const handleAdvisor = () => {
+    alert("Prenotazione completata! Un nostro consulente ti contatterà a breve!")
+  }
   return (
     <Container className="container-fluid p-5 section rounded-4 my-4">
       <Row className="d-flex flex-column align-items-center">
@@ -152,6 +150,7 @@ const Section3 = () => {
                 mutuo e ricevere consigli e dritte.
               </p>
               <Button
+              onClick={handleAdvisor}
                 className="brandButton4 align-self-stretch"
                 variant="outline-primary"
               >
