@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setRateFixOrVarAction } from "../../../../redux/actions";
 
@@ -12,7 +11,7 @@ const RatingButton = ({ ButtonType, setting}) => {
     cssClass += " selectedRate";
   } else if (rateFixOrVar === "Fisso" || rateFixOrVar === "Variabile") {    
   } else {
-    console.log("the rating button doesn't work correctly")
+    console.debug("the rating button doesn't work correctly")
   }
   return (
     <div

@@ -1,29 +1,26 @@
 import React, { useCallback, useEffect, useState } from "react";
-import InvisibleForm from "./InvisibleForm";
 import { useDispatch, useSelector } from "react-redux";
 import { setMonthlyRateAction } from "../../../redux/actions";
+import VisibleForm from "./VisibleForm";
 
 function Amount() {
-  const [importoMensile, setImportoMensile] = useState(0);
-  const [decimale, setDecimale] = useState("");
+  const [monthlyRate, setmonthlyRate] = useState(0);
+  const [decimal, setDecimal] = useState("");
 
-  // mounthly amount calculated with props
-  const gestoreMensile = (value) => {
-    setImportoMensile(value);
-    setDecimale(() => {
+  const monthlyVisualManager = (value) => {
+    setmonthlyRate(value);
+    setDecimal(() => {
       let buffer = value - Math.floor(value);
       return buffer.toString().slice(2, 4);
     });
   };
+
   const dispatch = useDispatch();
+
   let TAEGStore = useSelector((state) => state.estimation.LoanRequest.TAEG);
   let yearStore = useSelector((state) => state.estimation.LoanRequest.year);
-  let monthlyRateStore = useSelector(
-    (state) => state.estimation.LoanRequest.monthlyRate
-  );
-  let actualLoanRequestStore = useSelector(
-    (state) => state.estimation.LoanRequest.actualLoanRequest
-  );
+  let monthlyRateStore = useSelector((state) => state.estimation.LoanRequest.monthlyRate);
+  let actualLoanRequestStore = useSelector((state) => state.estimation.LoanRequest.actualLoanRequest);
   let checkStore = useSelector((state) => state.estimation.LoanRequest);
   console.debug("THIS IS THE STORE: ", checkStore);
 
@@ -35,9 +32,8 @@ function Amount() {
       (actualLoanRequestStore * (r * Math.pow(1 + r, n))) /
       (Math.pow(1 + r, n) - 1);
     dispatch(setMonthlyRateAction(monthlyRateCalculated));    
-    setImportoMensile(monthlyRateStore);
-    gestoreMensile(monthlyRateStore);
-    // settingVisibleForm(rateStore, TAEGStore);
+    setmonthlyRate(monthlyRateStore);
+    monthlyVisualManager(monthlyRateStore);
   }, [TAEGStore, yearStore, monthlyRateStore, actualLoanRequestStore, dispatch]);
 
   useEffect(() => {
@@ -47,11 +43,11 @@ function Amount() {
   return (
     <>
       <div className="text-center mb-4">
-        <span className="bigFont fw-bold">{Math.floor(importoMensile)},</span>
-        <span className="middleFont">{decimale}</span>
+        <span className="bigFont fw-bold">{Math.floor(monthlyRate)},</span>
+        <span className="middleFont">{decimal}</span>
         <span className="smallFont ms-1 Greytext">€/mese</span>
       </div>
-      <InvisibleForm /* onMensileChange={gestoreMensile} // props function */ />
+      <VisibleForm />
     </>
   );
 }

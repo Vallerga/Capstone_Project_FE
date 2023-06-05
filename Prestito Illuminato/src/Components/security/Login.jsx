@@ -44,7 +44,7 @@ const Login = () => {
     if (tok) {
       setUsername(tok.username);
       setPassword(localStorage.getItem("pass"));
-      // console.log(`usernameLocal e passwordLocal: ${username}, ${password}`)
+      
       if(activateLocal) {
         setCheckState(true)
       } else {

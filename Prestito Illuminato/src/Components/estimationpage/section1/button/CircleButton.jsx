@@ -1,13 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setLoanAction, setTotalImportAction } from "../../../../redux/actions";
 
-const CircleButton = ({
-  whatIs,
-  actualImport,
-  onClickHandler,
-  type,
-  setting,
-}) => {
+const CircleButton = ({ whatIs, type, setting }) => {
   let cssClass = setting;
   let changer = 10000;
   let maxImport = 1000000;
@@ -31,7 +25,6 @@ const CircleButton = ({
         }
         actualLoanRequest += changer;
         dispatch(setLoanAction(actualLoanRequest));
-        // console.log("loanRequest del bottone", actualLoanRequest);
       } else if (type === "-") {
         if (actualLoanRequest - changer < 0) {
           alert("Loan request cannot be less than 0€");
@@ -39,7 +32,6 @@ const CircleButton = ({
         }
         actualLoanRequest -= changer;
         dispatch(setLoanAction(actualLoanRequest));
-        // console.log("loanRequest del bottone", actualLoanRequest);
       }
     } else if (whatIs === "totalImportImmobile") {
       if (type === "+") {
@@ -49,7 +41,6 @@ const CircleButton = ({
         }
         actualTotalImport += changer;
         dispatch(setTotalImportAction(actualTotalImport));
-        // console.log("totalImportImmobile del bottone", actualTotalImport);
       } else if (type === "-") {
         if (actualTotalImport - changer < actualLoanRequest) {
           alert("Total import immobile cannot be less than loan request");
@@ -60,7 +51,6 @@ const CircleButton = ({
         }
         actualTotalImport -= changer;
         dispatch(setTotalImportAction(actualTotalImport));
-        // console.log("totalImportImmobile del bottone", actualTotalImport);
       }
     }
   };
@@ -68,9 +58,6 @@ const CircleButton = ({
   return (
     <div
       onClick={() => {
-        /* console.log("click event"); */
-        //onClickHandler(whatIs, actualImport, 10000, type); <--- method using lifting state
-
         reduxImportSetter();
       }}
       className={cssClass}

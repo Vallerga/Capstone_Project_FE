@@ -2,7 +2,7 @@ import { Col, Row } from "react-bootstrap";
 import CircleButton from ".//button/CircleButton";
 import { useSelector } from "react-redux";
 
-const LoanImport = ({ loan, total, onClickHandler }) => {
+const LoanImport = () => {
   const actualLoanRequest = useSelector((state) => state.estimation.LoanRequest.actualLoanRequest);
   return (
     <Row className="text-center text-xxl-start py-3">
@@ -24,15 +24,11 @@ const LoanImport = ({ loan, total, onClickHandler }) => {
         <div className="d-flex">
           <CircleButton
             whatIs={"loanRequest"}
-            actualImport={loan}            
-            onClickHandler={onClickHandler}
             type={"+"}
             setting={"circleButton text-center"}
           />
           <CircleButton
             whatIs={"loanRequest"}
-            actualImport={loan}
-            onClickHandler={onClickHandler}
             type={"-"}
             setting={"ms-3 me-xxl-5 circleButton text-center"}
           />
