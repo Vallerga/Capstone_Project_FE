@@ -85,26 +85,27 @@ const Questionary = () => {
   if (index >= 9) {
     return <Navigate to="/EstimationPage" />;
   }
-  
-  return (
-    <Container className="mainRow container-fluid gradientContainer homePageBorder rounded-4 mt-4 mb-5">
-      <Row className="d-flex flex-column align-items-center px-5 logoColorDark">
-        <Col>
-          <h1 className="title-questionary">QUESTIONARIO</h1>
 
-          <h2>{questionArray[index].question}</h2>
-          {questionArray[index].answers.map((answer, i) => {
-            return (
-              <Button
-                onClick={questionHandler}
-                className="questionButton mt-4"
-                variant="primary"
-              >
-                {answer}
-              </Button>
-            );
-          })}
-          <div className="py-5">Domanda numero {index + 1}</div>
+  return (
+    <Container className="mainRow gradientContainer homePageBorder rounded-4 mt-5">
+      <Row className="py-5 px-5 logoColorDark">
+        <Col>
+          <h1 className="titleQuestionary">QUESTIONARIO</h1>
+          <h2 className="subtitleQuestionary">{questionArray[index].question}</h2>
+          <div className="d-flex flex-wrap justify-content-center">
+            {questionArray[index].answers.map((answer, i) => {
+              return (
+                <Button
+                  onClick={questionHandler}
+                  className="questionButton mt-4"
+                  variant="primary"
+                >
+                  {answer}
+                </Button>
+              );
+            })}
+          </div>
+          <div className="fs-2 pt-5">Domanda numero {index + 1}</div>
         </Col>
       </Row>
     </Container>

@@ -1,10 +1,40 @@
 .gradientContainer {
 background-color: $bgWhite;
-  // background: linear-gradient(to top left, #210070, #7ad9c4);
+  // background: linear-gradient(to top left, $LogoColorDark2, $LogoColorBright2);
   box-shadow: 0 0 2px 1px $grey2;
+  margin-bottom: 70px!important;
 }
 
-.title-questionary {
+.titleQuestionary {
     // color: white;
     font-size: 4rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1600px) {
+  .gradientContainer {
+    margin-bottom: 50px!important;
+  }
+
+  .title-questionary {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .titleQuestionary {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .subtitleQuestionary{
+    font-size: 1.4rem;
+  }
+
+  .titleQuestionary {
+    font-size: 1.9rem;
+  }
 }

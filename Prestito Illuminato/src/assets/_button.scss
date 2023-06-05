@@ -166,6 +166,12 @@
   color: $LogoColorDark2 !important;
 }
 
+@media (max-width: 500px) {
+  .questionButton {
+    width: 200px;
+  }
+}
+
 .circleButton {
   border-radius: 50%;
   background-color: $grey3;
