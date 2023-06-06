@@ -14,7 +14,6 @@ const CompareLoan = () => {
       type: "GO_QUESTIONARY",
       payload: true,
     });
-    // console.log(`fetch eseguita`);
   };
 
   if (questionary) {

@@ -24,10 +24,7 @@ const Register = () => {
       email: email,
       password: password,
       roles: ["ROLE_USER"],
-    };
-    console.log(
-      `bodyLogin used for fetch: ${JSON.stringify(bodyRegistration, null, 2)}`
-    );
+    };    
 
     // sent sign in credential
     try {
@@ -38,11 +35,6 @@ const Register = () => {
         },
         body: JSON.stringify(bodyRegistration),
       });
-
-      // print fetch response
-      console.debug(
-        `response.ok: ${response.ok}, response.status: ${response.status}`
-      );
 
       if (response.ok) {
         setRegistered(true);

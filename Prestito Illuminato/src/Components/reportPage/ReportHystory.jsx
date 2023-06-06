@@ -5,9 +5,8 @@ import TableComponent from "./TableComponent";
 import { Navigate } from "react-router-dom";
 
 const ReportHistory = () => {
-  const username = useSelector((state) => state.security.userName);
-  const [buttonState, setButtonState] = useState("false");
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); 
+
   const LinkHomePage = () => {
     setButtonState("true");
     dispatch({
@@ -19,9 +18,15 @@ const ReportHistory = () => {
       payload: false,
     });
   };
+
   const URL = "http://localhost:8080/api/reports";
+  
+  const [buttonState, setButtonState] = useState("false");
   const [reports, setReports] = useState(null);
+
+  const username = useSelector((state) => state.security.userName);
   const userToken = useSelector((state) => state.security.userToken);
+
   const reportFetch = useCallback(async () => {
     try {
       const response = await fetch(URL, {
@@ -30,23 +35,23 @@ const ReportHistory = () => {
           "Content-Type": "application/json",
         },
       });
+
       if (response.ok) {
         const results = await response.json();
-        // await console.log("username profilo: ", username)
-        // await console.log("results: ", results)
         let userResults = results.filter(
           (report, i) => {
-            // console.log(`username numero ${i}: ${report.user.username}`)
             return report.user.username === username
           }
         );
         console.log(`userResults: ${JSON.stringify(userResults, null, 2)}`);
         setReports(userResults);
+
       } else {
         alert(
           `errore durante download reports, response status: ${response.status}`
         );
       }
+
     } catch (error) {
       alert(`errore durante download reports: ${error}`);
     }
@@ -59,6 +64,7 @@ const ReportHistory = () => {
   if (buttonState === "true") {
     return <Navigate to="/Home" />;
   }
+
   return (
     <Container className="container-fluid section rounded-4 mt-4 mb-5">
       <Row className="d-flex flex-column align-items-center">
@@ -76,9 +82,7 @@ const ReportHistory = () => {
           >
             RITORNA ALLA HOMEPAGE
           </Button>
-        </Col>
-        {/* <div onClick={reportFetch}>CLICCAMI PER I REPORT</div>
-        <div>{JSON.stringify(reports, null, 2)}</div> */}
+        </Col>        
       </Row>
     </Container>
   );

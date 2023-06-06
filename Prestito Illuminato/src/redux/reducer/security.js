@@ -1,6 +1,9 @@
+import {SAVE_USERID} from "../actions";
+
 const initialState = {
   userToken: null,
   userName: null,
+  userId: null,
 };
 
 const security = (state = initialState, action) => {
@@ -15,6 +18,11 @@ const security = (state = initialState, action) => {
             ...state,
             userName: action.payload,
           }
+          case SAVE_USERID:
+            return {
+              ...state,
+              userId: action.payload,
+            }
     default:
       return state;
   }

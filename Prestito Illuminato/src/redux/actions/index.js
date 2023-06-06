@@ -6,6 +6,7 @@ export const SET_TAEG = "SET_TAEG";
 export const SET_YEAR = "SET_YEAR";
 export const SET_SUSTAINABILITY = "SET_SUSTAINABILITY";
 export const SET_MONTHLYRATE = "SET_MONTHLYRATE";
+export const SAVE_USERID = "SAVE_USERID";
 
 export const setLoanAction = (loan) => {
   /* console.log("loan is: ", loan) */
@@ -68,6 +69,14 @@ export const setMonthlyRateAction = (monthlyRate) => {
   return {
     type: SET_MONTHLYRATE,
     payload: monthlyRate,
+  };
+};
+
+export const dispatchUserId = (value) => {
+  /* console.log("id from action is: ", value); */
+  return {
+    type: SAVE_USERID,
+    payload: value,
   };
 };
 
