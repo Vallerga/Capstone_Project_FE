@@ -1,4 +1,4 @@
-Per accedere alla parte Front-End potete liberamente consultare: [repository Capstone Project Back-End](https://github.com/Vallerga/Capstone_Project)
+Per accedere alla parte Back-End potete liberamente consultare: [repository Capstone Project Back-End](https://github.com/Vallerga/Capstone_Project)
 
 # SINOSSI CAPSTONE PROJECT - **PRESTITO ILLUMINATO**
 
@@ -58,4 +58,4 @@ Entrambi le componenti sono state strutturate prevedendo:
 - File controller responsabile della mappatura dei servizi REST
 - sezione dedicata alla gestione delle exception
 
-Per accedere alla parte Front-End potete liberamente consultare: [repository Capstone Project Back-End](https://github.com/Vallerga/Capstone_Project)
+Per accedere alla parte Back-End potete liberamente consultare: [repository Capstone Project Back-End](https://github.com/Vallerga/Capstone_Project)
