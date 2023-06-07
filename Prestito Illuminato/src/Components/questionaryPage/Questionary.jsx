@@ -96,6 +96,7 @@ const Questionary = () => {
             {questionArray[index].answers.map((answer, i) => {
               return (
                 <Button
+                  key={i}
                   onClick={questionHandler}
                   className="questionButton mt-4"
                   variant="primary"

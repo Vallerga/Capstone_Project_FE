@@ -43,7 +43,7 @@ const ReportHistory = () => {
             return report.user.username === username
           }
         );
-        console.log(`userResults: ${JSON.stringify(userResults, null, 2)}`);
+        
         setReports(userResults);
 
       } else {

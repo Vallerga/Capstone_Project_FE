@@ -28,8 +28,7 @@ const EstimationPage = () => {
         let users = await response.json();
         let loggedUser = await users.find((user) => user.username === userName);
 
-        dispatch(dispatchUserId(loggedUser.id));
-        console.log(`loggedUser: ${JSON.stringify(loggedUser)}`);
+        dispatch(dispatchUserId(loggedUser.id));        
 
       } else {
         alert(

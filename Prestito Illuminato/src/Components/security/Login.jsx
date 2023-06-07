@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import { Button, Col, Row } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const URL = "http://localhost:8080/api/auth/login";
 
@@ -25,39 +25,45 @@ const BODY_EXAMPLE = {
 const Login = () => {
   let result;
 
-  let body = localStorage.getItem("userT");
-  let tok = JSON.parse(body);
-  let logged = localStorage.getItem("rememberMe");
+  let stringifiedUser = localStorage.getItem("userT");
+  let user = JSON.parse(stringifiedUser);
+  let isLogged = !!stringifiedUser;
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [activateLocal, setActivateLocal] = useState(false);
-  const [checkState, setCheckState] = useState(null);
-
-  useEffect(() => {
-  if (logged) {
-  setActivateLocal(true)
-  }
-  },[logged])
-
-  useEffect(() => {
-    if (tok) {
-      setUsername(tok.username);
-      setPassword(localStorage.getItem("pass"));
-      
-      if(activateLocal) {
-        setCheckState(true)
-      } else {
-        setCheckState(false)
-      }
-    }
-  },[tok, activateLocal])
-  
-  const handleChange = () => {
-    setActivateLocal(!activateLocal);
-  };
+  const [checkState, setCheckState] = useState(false);
 
   let dispatch = useDispatch();
+
+  const loadUser = useCallback(
+    (result) => {
+      // send token to Redux store
+      dispatch({
+        type: "CHECK_TOKEN_REDUCER",
+        payload: `Bearer ${result.accessToken}`,
+      });
+
+      // send username to Redux store
+      dispatch({
+        type: "SAVE_USERNAME",
+        payload: username,
+      });
+    },
+    [dispatch, username]
+  );
+
+  useEffect(() => {
+    if (isLogged) {
+      loadUser(user);
+    }
+  }, [user, isLogged, loadUser]);
+
+  /* useEffect(() => {
+    if (user) {
+      setUsername(user.username);
+      setPassword(localStorage.getItem("pass"));
+    }
+  }, [user]); */
 
   const handleSubmit = async (event) => {
     // prevent refresh
@@ -81,24 +87,13 @@ const Login = () => {
       if (response.ok) {
         result = await response.json();
         // print fetch response body
-        let value = JSON.stringify(result, null, 2);
+        let stringifiedResult = JSON.stringify(result);
 
-        // send token to Redux store
-        dispatch({
-          type: "CHECK_TOKEN_REDUCER",
-          payload: `Bearer ${result.accessToken}`,
-        });
+        loadUser(result);
 
-        // send username to Redux store
-        dispatch({
-          type: "SAVE_USERNAME",
-          payload: username,
-        });
-        
-        if (activateLocal) {
-          localStorage.setItem("userT", value);
+        if (checkState) {
+          localStorage.setItem("userT", stringifiedResult);
           localStorage.setItem("pass", password);
-          localStorage.setItem("rememberMe", "logged");
         } else {
           localStorage.clear();
         }
@@ -159,7 +154,7 @@ const Login = () => {
           </div>
           <div className="d-flex align-items-center pt-3">
             <input
-              onChange={handleChange}
+              onChange={(e) => setCheckState(e.target.checked)}
               type="checkbox"
               id="rememberMe"
               name="rememberMe"

@@ -8,8 +8,7 @@ const URLREPORT = "http://localhost:8080/api/reports";
 const Section2 = () => {
   const LoanRequest = useSelector((state) => state.estimation.LoanRequest);
   const userToken = useSelector((state) => state.security.userToken);
-  let userIdFromStore = useSelector((state) => state.security.userId);
-  console.log("userIdFromStore: ", userIdFromStore)
+  // let userIdFromStore = useSelector((state) => state.security.userId);
   
   const bodyReport = {
     year: LoanRequest.year,
@@ -21,13 +20,12 @@ const Section2 = () => {
     taeg: LoanRequest.TAEG,
     monthlyRate: LoanRequest.monthlyRate,
     user: {
-      id: userIdFromStore,
+      id: 1,
     },
   };
 
-  const handlePostReport = async () => {    
-    console.log("userId: ", userIdFromStore)
-
+  const handlePostReport = async () => {
+    
     // create report
     try {
       const response = await fetch(URLREPORT, {

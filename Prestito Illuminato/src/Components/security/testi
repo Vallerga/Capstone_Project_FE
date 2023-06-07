@@ -1,0 +1,19 @@
+caso 1
+utente non loggato
+checkbox false
+
+caso 2
+utente loggato
+entra diretto
+
+caso 3
+utente non loggato ma con dati localStorage
+entra diretto
+
+
+
+
+
+TO DO LIST
+fix CheckBox toggle veloce
+check password from local storage is valid before use it. if isn't valid clear localStorage and ask user log in

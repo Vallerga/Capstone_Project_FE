@@ -26,42 +26,36 @@ const YearButton = ({ type, setting }) => {
     if (WhoIsSelected === 5 && cssClass === "first duration text-center ") {
       setCssClass(cssClass + " yearSelected");
       dispatch(setSustainabilityAction("Alta"));
-      console.log("sono attivo: 5, Alta");
     } else if (
       WhoIsSelected === 10 &&
       cssClass === "second duration text-center "
     ) {
       setCssClass(cssClass + " yearSelected");
       dispatch(setSustainabilityAction("Alta"));
-      console.log("sono attivo: 10, Alta");
     } else if (
       WhoIsSelected === 15 &&
       cssClass === "third duration text-center "
     ) {
       setCssClass(cssClass + " yearSelected");
       dispatch(setSustainabilityAction("Media"));
-      console.log("sono attivo: 15, Media");
     } else if (
       WhoIsSelected === 20 &&
       cssClass === "fourth duration text-center "
     ) {
       setCssClass(cssClass + " yearSelected");
       dispatch(setSustainabilityAction("Media"));
-      console.log("sono attivo: 20, Media");
     } else if (
       WhoIsSelected === 25 &&
       cssClass === "fifth duration text-center "
     ) {
       setCssClass(cssClass + " yearSelected");
       dispatch(setSustainabilityAction("Bassa"));
-      console.log("sono attivo: 25, Bassa");
     } else if (
       WhoIsSelected === 30 &&
       cssClass === "sixth duration text-center "
     ) {
       setCssClass(cssClass + " yearSelected");
       dispatch(setSustainabilityAction("Bassa"));
-      console.log("sono attivo: 30, Bassa");
     } else if (
       WhoIsSelected === 5 ||
       WhoIsSelected === 10 ||
@@ -73,9 +67,12 @@ const YearButton = ({ type, setting }) => {
       setCssClass(setting);
       //console.log("button not selected");
     } else {
-      console.debug("connectSustainabilityYear function doesn't work correctly");
+      console.debug(
+        "connectSustainabilityYear function doesn't work correctly"
+      );
     }
   };
+
   return (
     <div
       onClick={() => {
