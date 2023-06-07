@@ -8,7 +8,7 @@ const URLREPORT = "http://localhost:8080/api/reports";
 const Section2 = () => {
   const LoanRequest = useSelector((state) => state.estimation.LoanRequest);
   const userToken = useSelector((state) => state.security.userToken);
-  // let userIdFromStore = useSelector((state) => state.security.userId);
+  let userIdFromStore = useSelector((state) => state.security.userId);
   
   const bodyReport = {
     year: LoanRequest.year,
@@ -20,7 +20,7 @@ const Section2 = () => {
     taeg: LoanRequest.TAEG,
     monthlyRate: LoanRequest.monthlyRate,
     user: {
-      id: 1,
+      id: userIdFromStore,
     },
   };
 

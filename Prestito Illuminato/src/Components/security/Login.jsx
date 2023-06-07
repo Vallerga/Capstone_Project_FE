@@ -46,10 +46,10 @@ const Login = () => {
       // send username to Redux store
       dispatch({
         type: "SAVE_USERNAME",
-        payload: username,
+        payload: result.username,
       });
     },
-    [dispatch, username]
+    [dispatch]
   );
 
   useEffect(() => {

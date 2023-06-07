@@ -26,7 +26,7 @@ function TableComponent({ tableValue }) {
               decimal = "00";
             }
           return (
-            <tr className="logoBgBright">
+            <tr key={report.id} className="logoBgBright">
               <td className="logoColorDark2">{report.id}</td>
               <td className="logoColorDark2">{report.actualLoanRequest}€</td>
               <td className="logoColorDark2">{report.actualTotalImport}€</td>
@@ -56,7 +56,7 @@ function TableComponent({ tableValue }) {
       <tbody>
         {tableValue && tableValue.map((report) => {
           return (
-            <tr className="logoBgBright">
+            <tr key={report.id} className="logoBgBright">
               <td className="logoColorDark2">{report.id}</td>
               <td className="logoColorDark2">{report.actualLoanRequest}€</td>
               <td className="logoColorDark2">{report.actualTotalImport}€</td>
